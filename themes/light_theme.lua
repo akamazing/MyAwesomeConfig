@@ -20,8 +20,8 @@ local helpers = require("themes.helpers")
 -------------------------------
 ------------ Fonts ------------
 -------------------------------
-theme.font = "JF Flat 11"
-theme.uifont = "JF Flat 11"
+theme.font = "Google Sana 11"
+theme.uifont = "Google Sana 11"
 theme.font_n = "Google Sana "
 -- notifications
 theme.appname_font = "Google Sana 10"

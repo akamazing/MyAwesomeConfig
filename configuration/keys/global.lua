@@ -98,7 +98,7 @@ local global_keys =
 	-- Right menu
 	awful.key(
 		{modkey},
-		"r",
+		"space",
 		function()
 			awful.util.spawn("rofi -show drun")
 		end,
@@ -255,9 +255,9 @@ local global_keys =
 		"XF86AudioRaiseVolume",
 		function()
 			awful.spawn.easy_async_with_shell(
-				[[amixer -D pulse sset Master 5%+]],
+				[[amixer sset Master 5%+]],
 				function(stdout)
-					awful.spawn("amixer -D pulse sset Master 1+ on", false)
+					awful.spawn("amixer sset Master 1+ on", false)
 					local volume = string.match(stdout, "(%d?%d?%d)%%")
 					awesome.emit_signal("widget::volume:update", volume)
 					awesome.emit_signal("module::volume_osd:show", true)
@@ -271,9 +271,9 @@ local global_keys =
 		"XF86AudioLowerVolume",
 		function()
 			awful.spawn.easy_async_with_shell(
-				[[amixer -D pulse sset Master 5%-]],
+				[[amixer sset Master 5%-]],
 				function(stdout)
-					awful.spawn("amixer -D pulse sset Master 1+ on", false)
+					awful.spawn("amixer sset Master 1+ on", false)
 					local volume = string.match(stdout, "(%d?%d?%d)%%")
 					awesome.emit_signal("widget::volume:update", volume)
 					awesome.emit_signal("module::volume_osd:show", true)
@@ -286,7 +286,7 @@ local global_keys =
 		{},
 		"XF86AudioMute",
 		function()
-			awful.spawn("amixer -D pulse set Master 1+ toggle", false)
+			awful.spawn("amixer set Master 1+ toggle", false)
 		end,
 		{description = "Toggle mute", group = "ميديا"}
 	),

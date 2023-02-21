@@ -43,7 +43,7 @@ return {
 		"xfce4-power-manager",
 		"xfce4-screensaver &> x.log",
 		"balooctl enable",
-		'setxkbmap -layout "us,ar" -option "grp:win_space_toggle"',
+		'setxkbmap -layout "us" -option "grp:win_space_toggle"',
 		"/usr/lib/polkit-kde-authentication-agent-1",
 		-- "picom -b --experimental-backends  --dbus --config " .. config_dir .. "/configuration/picom.conf",
 		"picom --dbus --config " .. config_dir .. "/configuration/picom.conf",
@@ -52,7 +52,7 @@ return {
 		-- PLasma theme
 		config_dir .. "./bin/plasma-theme -c " .. config_dir .. "/themes/plasma-colors/" .. beautiful.plasma_color,
 		-- "kwriteconfig5 --file ~/.config/kcminputrc --group Mouse --key cursorTheme " .. beautiful.plasma_cursors,
-		"kcminit",
+		-- "kcminit",
 		config_dir .. beautiful.conky_script .." > /dev/null 2>&1",
 		-- QT Icons
 		'sed -i "s/icon_theme=.*/icon_theme='.. beautiful.qt_icon_theme ..'/g" ~/.config/qt5ct/qt5ct.conf',

@@ -53,7 +53,7 @@ vol_osd_slider:connect_signal(
 	"property::value",
 	function()
 		local volume_level = vol_osd_slider:get_value()
-		awful.spawn("amixer -D pulse sset Master " .. volume_level .. "%", false)
+		awful.spawn("amixer sset Master " .. volume_level .. "%", false)
 		-- awful.spawn("amixer -q sset Master " .. volume_level .. "%", false)
 
 		-- Update textbox widget text

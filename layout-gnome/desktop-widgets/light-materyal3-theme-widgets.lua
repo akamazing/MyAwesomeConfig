@@ -20,7 +20,7 @@ awful.screen.connect_for_each_screen(
                 fuzzy_time_fg_color = "#ffdad9",
                 month_name_text_color = "#ffdad9",
                 day_number_text_color = "#ffdad9",
-                day_text_font = "JF Flat 20",
+                day_text_font = "Google Sana 20",
                 date_width=dpi(300),
                 time_now_top = dpi(8),
                 clock_bg = "#4b5569",
@@ -40,7 +40,7 @@ awful.screen.connect_for_each_screen(
 
             s.saying =
                 require("widget.desktop-saying") {
-                wisdom_text_font = "JF Flat 15",
+                wisdom_text_font = "Google Sana 15",
                 allow_scroll = true,
                 valign = "top"
             }
@@ -48,8 +48,8 @@ awful.screen.connect_for_each_screen(
             s.music2 =
                 require("widget.music") {
                 widget_fg = "#ffdad9",
-                text_font = "JF Flat 15",
-                artist_font = "JF Flat 12",
+                text_font = "Google Sana 15",
+                artist_font = "Google Sana 12",
                 widget_bg = "#00000000",
                 bar_active_color = "#ffdad900",
                 margin_top = dpi(15),

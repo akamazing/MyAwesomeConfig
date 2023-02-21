@@ -23,16 +23,16 @@ local function worker(args)
 	local clock_top = args.clock_top
 	local clock_bottom = args.clock_bottom
 
-	local day_text_font = args.day_text_font or "JF Flat 25"
+	local day_text_font = args.day_text_font or "Google Sana 25"
 	local day_text_color = args.day_text_color or beautiful.accent
 	
 	local line_color = args.line_color or beautiful.accent
 
-	local time_now_text_font = args.day_text_font or "JF Flat 20"
+	local time_now_text_font = args.day_text_font or "Google Sana 20"
 	local time_now_text_color = args.time_now_text_color or beautiful.accent
 	local time_now_top = args.time_now_top or dpi(15)
 
-	local month_name_text_font = args.month_name_text_font or "JF Flat 25"
+	local month_name_text_font = args.month_name_text_font or "Google Sana 25"
 	local month_name_text_color = args.month_name_text_color or beautiful.accent
 
 	local date_bg = args.date_bg or beautiful.transparent
@@ -43,7 +43,7 @@ local function worker(args)
 	local date_bottom = args.date_bottom
 	local date_width = args.date_width
 
-	local day_number_text_font = args.day_number_text_font or "JF Flat 50"
+	local day_number_text_font = args.day_number_text_font or "Google Sana 50"
 	local day_number_text_color = args.day_number_text_color or beautiful.accent
 
 	local day_align = args.day_align or "center"
@@ -51,7 +51,7 @@ local function worker(args)
 	local month_align = args.month_align or "center"
 
 
-	local fuzzy_time_text_font = args.fuzzy_time_text_font or "JF Flat 18"
+	local fuzzy_time_text_font = args.fuzzy_time_text_font or "Google Sana 18"
 	local fuzzy_time_icon_font = args.fuzzy_time_icon_font or "Font Awesome 5 Free Solid 12"
 	local fuzzy_time_fg_color = args.fuzzy_time_fg_color or beautiful.accent
 	local fuzzy_time_bg_color = args.fuzzy_time_bg_color or beautiful.transparent

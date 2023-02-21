@@ -47,7 +47,7 @@ ruled.notification.connect_signal(
 		ruled.notification.append_rule {
 			rule = {urgency = "critical"},
 			properties = {
-				-- font        		= 'JF Flat 10',
+				-- font        		= 'Google Sana 10',
 				bg = beautiful.critical_notification_bg,
 				fg = beautiful.critical_notification_fg,
 				title_bg = beautiful.critical_notification_bg,
@@ -61,7 +61,7 @@ ruled.notification.connect_signal(
 		ruled.notification.append_rule {
 			rule = {urgency = "normal"},
 			properties = {
-				-- font        		= 'JF Flat 10',
+				-- font        		= 'Google Sana 10',
 				bg = beautiful.notification_bg,
 				fg = beautiful.fg_normal,
 				-- margin = dpi(16),
@@ -74,7 +74,7 @@ ruled.notification.connect_signal(
 		ruled.notification.append_rule {
 			rule = {urgency = "low"},
 			properties = {
-				-- font        		= 'JF Flat 10',
+				-- font        		= 'Google Sana 10',
 				bg = beautiful.low_notification_bg,
 				fg = beautiful.low_notification_fg,
 				-- margin = dpi(16),

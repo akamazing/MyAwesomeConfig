@@ -22,7 +22,7 @@ local helpers = require("helpers")
 
 local action_name =
 	helpers.add_text_icon_widget {
-	text = "وضع الطيران",
+	text = "Flight mode",
 	icon = "",
 	ltr = true,
 	icon_font = beautiful.iconfont,
@@ -97,9 +97,9 @@ local ap_off_cmd =
 	awesome-client "
 	naughty = require('naughty')
 	naughty.notification({
-		app_name = 'مدير الشبكة',
-		title = '<b>تم ايقاف وضع الطيران!</b>',
-		message = 'تهيئة اجهزة الاتصال',
+		app_name = 'network manager',
+		title = '<b>Flight mode is deactivated!</b>',
+		message = 'Communication devices turned on!',
 		icon = ']] ..
 	widget_icon_dir ..
 		"airplane-mode-off" .. ".svg" .. [['
@@ -117,9 +117,9 @@ local ap_on_cmd =
 	awesome-client "
 	naughty = require('naughty')
 	naughty.notification({
-		app_name = 'مدير الشبكة',
-		title = '<b>تم تفعيل وضع الطيران!</b>',
-		message = 'ايقاف اجهزة الاتصال',
+		app_name = 'network manager',
+		title = '<b>Flight mode is activated!</b>',
+		message = 'Communication devices turned off!',
 		icon = ']] ..
 	widget_icon_dir ..
 		"airplane-mode" .. ".svg" .. [['

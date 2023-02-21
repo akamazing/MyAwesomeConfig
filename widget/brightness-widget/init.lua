@@ -39,7 +39,7 @@ local function worker(args)
 
     local quick_header =
         wibox.widget {
-        text = "السطوع",
+        text = "Brightness",
         font = text_font,
         align = "center",
         valign = "center",

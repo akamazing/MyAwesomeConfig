@@ -59,7 +59,7 @@ volume_slider:connect_signal(
 	"property::value",
 	function()
 		local volume_level = volume_slider:get_value()
-		spawn("amixer -D pulse sset Master " .. volume_level .. "%", false)
+		spawn("amixer sset Master " .. volume_level .. "%", false)
 		awesome.emit_signal("module::volume_osd", volume_level)
 		awesome.emit_signal("widget::set_volume", volume_level)
 	end
@@ -96,7 +96,7 @@ volume_slider:buttons(
 
 local update_slider = function()
 	awful.spawn.easy_async_with_shell(
-		[[amixer -D pulse sget Master]],
+		[[amixer sget Master]],
 		function(stdout)
 			local volume = string.match(stdout, "(%d?%d?%d)%%")
 			volume_slider:set_value(tonumber(volume))

@@ -16,7 +16,7 @@ awful.screen.connect_for_each_screen(
             -------------
             s.saying =
                 require("widget.desktop-saying") {
-                wisdom_text_font = "JF Flat 15",
+                wisdom_text_font = "Google Sana 15",
                 forced_width = dpi(490),
                 forced_height = dpi(105),
                 valign = "top"
@@ -59,8 +59,8 @@ awful.screen.connect_for_each_screen(
                 title_forced_width = dpi(490),
                 artist_forced_width = dpi(490),
                 title_font = "VIP Hakm 20",
-                -- title_font = "JF Flat 20",
-                artist_font = "JF Flat 16",
+                -- title_font = "Google Sana 20",
+                artist_font = "Google Sana 16",
                 point = function(geo, args)
                     return {
                         x = args.parent.width - geo.width,

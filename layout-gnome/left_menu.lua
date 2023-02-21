@@ -68,7 +68,8 @@ local function factory(args)
 
     local power_button =
         helpers.add_text_icon_widget {
-        text = "خروج ...",
+        text = "Exit ...",
+        ltr = true,
         icon = "",
         icon_font = beautiful.iconfont,
         text_font = text_font
@@ -76,6 +77,7 @@ local function factory(args)
 
     local open_settings =
         helpers.add_text_icon_widget {
+            
         text = "الاعدادات",
         icon = "",
         icon_font = beautiful.iconfont,

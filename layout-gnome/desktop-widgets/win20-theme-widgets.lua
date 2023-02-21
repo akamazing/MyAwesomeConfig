@@ -20,7 +20,7 @@
 --                 fuzzy_time_fg_color = "#ffdad9",
 --                 month_name_text_color = "#ffdad9",
 --                 day_number_text_color = "#ffdad9",
---                 day_text_font = "JF Flat 20",
+--                 day_text_font = "Google Sana 20",
 --                 time_now_top = dpi(8),
 --                 clock_bg = "#0a61af",
 --                 clock_shape = helpers.rrect(100),
@@ -39,7 +39,7 @@
 
 --             s.saying =
 --                 require("widget.desktop-saying") {
---                 wisdom_text_font = "JF Flat 15",
+--                 wisdom_text_font = "Google Sana 15",
 --                 allow_scroll = true,
 --                 valign = "top"
 --             }
@@ -47,8 +47,8 @@
 --             s.music2 =
 --                 require("widget.music") {
 --                 widget_fg = "#ffdad9",
---                 text_font = "JF Flat 15",
---                 artist_font = "JF Flat 12",
+--                 text_font = "Google Sana 15",
+--                 artist_font = "Google Sana 12",
 --                 widget_bg = "#00000000",
 --                 bar_active_color = "#ffdad900",
 --                 margin_top = dpi(15),
@@ -168,7 +168,7 @@ awful.screen.connect_for_each_screen(
 
             s.saying =
                 require("widget.desktop-saying") {
-                wisdom_text_font = "JF Flat 15",
+                wisdom_text_font = "Google Sana 15",
                 forced_height = dpi(300),
                 forced_width = dpi(450),
                 valign = "top"
@@ -182,8 +182,8 @@ awful.screen.connect_for_each_screen(
                     from = {500, 20},
                     to = {0, 0}
                 },
-                text_font = "JF Flat 15",
-                artist_font = "JF Flat 12",
+                text_font = "Google Sana 15",
+                artist_font = "Google Sana 12",
                 widget_bg = "#50407800",
                 bar_active_color = "#ff4bde",
                 margin_top=dpi(15),
@@ -205,8 +205,8 @@ awful.screen.connect_for_each_screen(
                     from = {500, 20},
                     to = {0, 0}
                 },
-                title_font = "JF Flat 16",
-                artist_font = "JF Flat 14"
+                title_font = "Google Sana 16",
+                artist_font = "Google Sana 14"
             }
 
             s.final =

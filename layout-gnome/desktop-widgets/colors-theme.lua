@@ -20,7 +20,7 @@ awful.screen.connect_for_each_screen(
 
             s.saying =
                 require("widget.desktop-saying") {
-                wisdom_text_font = "JF Flat 15",
+                wisdom_text_font = "Google Sana 15",
                 forced_width = dpi(700)
             }
 
@@ -32,8 +32,8 @@ awful.screen.connect_for_each_screen(
                     from = {500, 20},
                     to = {0, 0}
                 },
-                text_font = "JF Flat 15",
-                artist_font = "JF Flat 12",
+                text_font = "Google Sana 15",
+                artist_font = "Google Sana 12",
                 widget_bg = "#50407800",
                 bar_active_color = "#10ddff",
                 margin_top=dpi(10),
@@ -56,8 +56,8 @@ awful.screen.connect_for_each_screen(
                 },
                 forced_width = dpi(550),
                 forced_height = dpi(100),
-                title_font = "JF Flat 16",
-                artist_font = "JF Flat 14"
+                title_font = "Google Sana 16",
+                artist_font = "Google Sana 14"
             }
 
             s.final =

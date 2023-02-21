@@ -39,7 +39,7 @@ local msg_table = {
 
 local greeter_message = wibox.widget {
 	markup = 'اختر بعناية!',
-	font = 'JF Flat 45',
+	font = 'Google Sana 45',
 	align = 'center',
 	margins = dpi(10),
 	padding = dpi(10),
@@ -49,7 +49,7 @@ local greeter_message = wibox.widget {
 
 local profile_name = wibox.widget {
 	markup = 'احمد',
-	font = 'JF Flat 12',
+	font = 'Google Sana 12',
 	align = 'center',
 	valign = 'center',
 	widget = wibox.widget.textbox
@@ -113,7 +113,7 @@ update_greeter_msg()
 local build_power_button = function(name, icon, callback)
 	local power_button_label= wibox.widget {
 		text = name,
-		font = 'JF Flat 10',
+		font = 'Google Sana 10',
 		align = 'center',
 		valign = 'center',
 		widget = wibox.widget.textbox

@@ -16,7 +16,7 @@ awful.screen.connect_for_each_screen(
             -------------
             s.saying =
                 require("widget.desktop-saying") {
-                wisdom_text_font = "JF Flat 15",
+                wisdom_text_font = "Google Sana 15",
                 forced_width = dpi(790),
                 forced_height = dpi(350),
                 valign = "top"
@@ -52,8 +52,8 @@ awful.screen.connect_for_each_screen(
             s.music =
                 require("widget.music") {
                 widget_fg = beautiful.accent,
-                text_font = "JF Flat 15",
-                artist_font = "JF Flat 12",
+                text_font = "Google Sana 15",
+                artist_font = "Google Sana 12",
                 widget_bg = "#50407800",
                 bar_active_color = "#717bf0",
                 margin_top=dpi(20),
@@ -71,8 +71,8 @@ awful.screen.connect_for_each_screen(
                 title_forced_width = dpi(790),
                 artist_forced_width = dpi(790),
                 forced_height = dpi(200),
-                title_font = "JF Flat 20",
-                artist_font = "JF Flat 16",
+                title_font = "Google Sana 20",
+                artist_font = "Google Sana 16",
                 point = function(geo, args)
                     return {
                         x = 0,
@@ -109,12 +109,12 @@ awful.screen.connect_for_each_screen(
             -----------
             s.clock =
                 require("widget.desktop-clock") {
-                fuzzy_time_text_font = "JF Flat 14",
+                fuzzy_time_text_font = "Google Sana 14",
                 fuzzy_time_icon_font = "Font Awesome 5 Free Solid 12",
                 day_number_text_font = "Poiret One 46",
-                month_name_text_font = "JF Flat 21",
-                time_now_text_font = "JF Flat 16",
-                day_text_font = "JF Flat 21",
+                month_name_text_font = "Google Sana 21",
+                time_now_text_font = "Google Sana 16",
+                day_text_font = "Google Sana 21",
                 line_margin_right = dpi(10),
                 line_margin_left = dpi(10),
                 day_align = "left",

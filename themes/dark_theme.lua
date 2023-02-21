@@ -18,8 +18,8 @@ local controllers = require("themes.controllers")
 -------------------------------
 ------------ Fonts ------------
 -------------------------------
-theme.font = "JF Flat 11"
-theme.uifont = "JF Flat 11"
+theme.font = "Google Sana 11"
+theme.uifont = "Google Sana 11"
 theme.font_n = "Google Sana "
 -- notifications
 theme.appname_font = "Google Sana 10"
@@ -120,8 +120,8 @@ theme.desktop_music_widget_bottom = dpi(10)
 theme.desktop_music_widget_right = dpi(0)
 theme.desktop_music_widget_left = dpi(750)
 theme.desktop_music_widget_maximum_width = dpi(458)
-theme.desktop_music_widget_title_font = "JF Flat 16"
-theme.desktop_music_widget_artist_font = "JF Flat 14"
+theme.desktop_music_widget_title_font = "Google Sana 16"
+theme.desktop_music_widget_artist_font = "Google Sana 14"
 
 --------------------------------
 ------------ Taglist -----------

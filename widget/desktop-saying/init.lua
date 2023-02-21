@@ -6,7 +6,7 @@ local words = require("widget.desktop-saying.words")
 local awful = require("awful")
 
 local function worker(args)
-	local wisdom_text_font = args.wisdom_text_font or "JF Flat 14"
+	local wisdom_text_font = args.wisdom_text_font or "Google Sana 14"
 
 	local forced_width = args.forced_width
 	local forced_height = args.forced_height

@@ -22,7 +22,7 @@ local helpers = require("helpers")
 
 local action_name =
 	helpers.add_text_icon_widget {
-	text = "البلوتوث",
+	text = "bluetooth",
 	icon = "",
 	ltr = true,
 	icon_font = beautiful.iconfont,

@@ -57,7 +57,7 @@ local worker = function (args)
     -- Popup
     local quick_header =
         wibox.widget {
-        text = "الصوت",
+        text = "Volume",
         font = text_font,
         align = "center",
         valign = "center",
@@ -66,7 +66,7 @@ local worker = function (args)
 
     local sound_settings =
         helpers.add_text_icon_widget {
-        text = "اعدادات الصوت",
+        text = "sound settings",
         icon = "",
         icon_font = beautiful.iconfont,
         text_font = text_font
@@ -196,7 +196,7 @@ local worker = function (args)
         "widget::volume",
         function(c)
             spawn.easy_async_with_shell(
-                "amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'",
+                "amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'",
                 function(stdout)
                     number_text_widget.text = stdout
                 end
@@ -212,7 +212,7 @@ local worker = function (args)
     )
 
     spawn.easy_async_with_shell(
-        "amixer -D pulse sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'",
+        "amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'",
         function(stdout)
             number_text_widget.text = stdout
         end

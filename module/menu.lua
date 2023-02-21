@@ -158,7 +158,7 @@ awesome_menu = {
 		menubar.utils.lookup_icon('system-restart')
 	},
 	{
-		'خروج',
+		'Exit',
 		function() awesome.quit() end,
 		menubar.utils.lookup_icon('system-log-out')
 	}
@@ -228,7 +228,7 @@ local tools_menu = {
 	-- 	menubar.utils.lookup_icon('accessories-screenshot')
 	-- },
 	{
-		'انهاء الجلسة',
+		'End session',
 		function()
 			awesome.emit_signal('module::exit_screen:show')
 		end,

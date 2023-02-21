@@ -16,7 +16,7 @@ awful.screen.connect_for_each_screen(
             -------------
             s.saying =
                 require("widget.desktop-saying") {
-                wisdom_text_font = "JF Flat 15",
+                wisdom_text_font = "Google Sana 15",
                 forced_width = dpi(500),
                 forced_height = dpi(300),
                 valign = "top"
@@ -29,8 +29,8 @@ awful.screen.connect_for_each_screen(
                 require("widget.music") {
                 widget_fg = beautiful.accent,
                 widget_bg = "#1c1d2900",
-                text_font = "JF Flat 15",
-                artist_font = "JF Flat 12",
+                text_font = "Google Sana 15",
+                artist_font = "Google Sana 12",
                 margin_top=dpi(15),
                 forced_height = dpi(160),
                 bar_active_color = "#edcc3d",
@@ -46,7 +46,7 @@ awful.screen.connect_for_each_screen(
                 artist_forced_width = dpi(550),
                 forced_height = dpi(70),
                 title_font = "Kufam 20",
-                artist_font = "JF Flat 16",
+                artist_font = "Google Sana 16",
                 point = function(geo, args)
                     return {
                         x = args.parent.width - geo.width,
@@ -135,9 +135,9 @@ awful.screen.connect_for_each_screen(
                 fuzzy_time_text_font = "Kufam 14",
                 fuzzy_time_icon_font = "Font Awesome 5 Free Solid 12",
                 day_number_text_font = "Poiret One 46",
-                month_name_text_font = "JF Flat 21",
-                time_now_text_font = "JF Flat 16",
-                day_text_font = "JF Flat 21",
+                month_name_text_font = "Google Sana 21",
+                time_now_text_font = "Google Sana 16",
+                day_text_font = "Google Sana 21",
                 line_margin_right = dpi(10),
                 line_margin_left = dpi(10),
                 day_align = "left",
