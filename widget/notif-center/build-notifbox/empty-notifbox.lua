@@ -26,14 +26,14 @@ local empty_notifbox =
 			nil
 		},
 		{
-			text = "واو, لا يوجد شيء.",
+			text = "Wow, there is nothing.",
 			font = beautiful.uifont,
 			align = "center",
 			valign = "center",
 			widget = wibox.widget.textbox
 		},
 		{
-			text = "اراك لاحقاً. ",
+			text = "I'll see you later. ",
 			font = beautiful.uifont,
 			align = "center",
 			valign = "center",

@@ -8,7 +8,7 @@ local icons = beautiful.icons
 
 local osd_header =
 	wibox.widget {
-	text = "مستوى الصوت",
+	text = "sound level",
 	font = beautiful.uifont,
 	align = "left",
 	valign = "center",

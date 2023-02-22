@@ -4,7 +4,7 @@ local beautiful = require("beautiful")
 
 local notif_header =
 	wibox.widget {
-	text = "مركز الاشعارات",
+	text = "Notification Center",
 	font = beautiful.uifont,
 	align = "center",
 	valign = "center",

@@ -347,7 +347,7 @@ local global_keys =
 			awesome.emit_signal("widget::brightness")
 			awesome.emit_signal("module::brightness_osd:show", true)
 		end,
-		{description = "Up", group = "السطوع"}
+		{description = "Up", group = "brightness"}
 	),
 	awful.key(
 		{},
@@ -357,7 +357,7 @@ local global_keys =
 			awesome.emit_signal("widget::brightness")
 			awesome.emit_signal("module::brightness_osd:show", true)
 		end,
-		{description = "Down", group = "السطوع"}
+		{description = "Down", group = "brightness"}
 	),
 	-- البرامج الاخرى
 	awful.key(

@@ -715,7 +715,7 @@ function helpers.create_music_widget(args)
                             id = "artist_scroll_id",
                             {
                                 id = "artist_id",
-                                text = "لا يوجد فنان",
+                                text = "There is no artist",
                                 font = artist_font, --"Google Sana 9",
                                 align = "left",
                                 valign = "left",

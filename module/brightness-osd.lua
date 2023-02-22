@@ -8,7 +8,7 @@ local icons = beautiful.icons
 
 local osd_header =
 	wibox.widget {
-	text = "السطوع",
+	text = "brightness",
 	font = beautiful.uifont,
 	align = "left",
 	valign = "center",

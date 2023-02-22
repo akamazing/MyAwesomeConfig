@@ -15,7 +15,7 @@ local blur_toggle = require("widget.blur-toggle")
 
 local quick_header =
 	wibox.widget {
-	text = "اعدادات سريعة",
+	text = "Quick settings",
 	font = beautiful.uifont,
 	align = "center",
 	valign = "center",

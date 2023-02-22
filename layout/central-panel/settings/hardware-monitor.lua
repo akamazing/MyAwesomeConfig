@@ -16,7 +16,7 @@ local harddrive_meter = require("widget.harddrive-meter")
 
 local hardware_header =
 	wibox.widget {
-	text = "استخدام الأجهزة",
+	text = "Hardware use",
 	font = beautiful.uifont,
 	align = "center",
 	valign = "center",
