@@ -479,14 +479,14 @@ function helpers.create_weather_detailed(args)
                     layout = wibox.layout.fixed.vertical,
                     {
                         text = "",
-                        font = "JF Flat 20",
+                        font = "Google Sana 20",
                         align = "left",
                         id = temperature_time_id,
                         widget = wibox.widget.textbox
                     },
                     {
                         text = "",
-                        font = "JF Flat 11",
+                        font = "Google Sana 11",
                         align = "left",
                         id = temperature_date_id,
                         widget = wibox.widget.textbox
@@ -522,7 +522,7 @@ function helpers.create_weather_detailed(args)
                     layout = wibox.layout.fixed.vertical,
                     {
                         text = "",
-                        font = "JF Flat 11",
+                        font = "Google Sana 11",
                         align = "left",
                         id = temperature_city_id,
                         widget = wibox.widget.textbox
@@ -577,7 +577,7 @@ function helpers.create_weather_detailed(args)
                 },
                 {
                     text = "",
-                    font = "JF Flat 40",
+                    font = "Google Sana 40",
                     align = "right",
                     id = temperature_id,
                     widget = wibox.widget.textbox
@@ -694,7 +694,7 @@ function helpers.create_music_widget(args)
                             id = "title_scroll_id",
                             {
                                 id = "title_id",
-                                text = "لا توجد موسيقى قيد التشغيل",
+                                text = "No music playing.",
                                 font = text_font,
                                 align = "center",
                                 valign = "center",
@@ -717,7 +717,7 @@ function helpers.create_music_widget(args)
                             {
                                 id = "artist_id",
                                 text = "لا يوجد فنان",
-                                font = artist_font, --"JF Flat 9",
+                                font = artist_font, --"Google Sana 9",
                                 align = "left",
                                 valign = "left",
                                 widget = wibox.widget.textbox

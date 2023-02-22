@@ -11,34 +11,19 @@ local config_dir = filesystem.get_configuration_dir()
 local widget_icon_dir = config_dir .. 'configuration/user-profile/'
 
 local msg_table = {
-	'أراك لاحقا!',
-	'نلتقي مجددا.',
-	'ابقى بعيدا عن المشاكل.',
-	'أنا خارج من هنا.',
-	'ياميتي, اونييي تشاان~. UwU',
-	'طيب ... باي باي!',
-	'سلام!',
+	'Farewell, my friend. UwU',
+	'You will be greatly missed. UwU',
+	'Goodbye, for now. UwU',
+	'Farewell!!! UwU',
+	'Bye Felicia! UwU',
+	'See You Later Alligator! UwU',
+	'So long, and thanks for all the fish! UwU',
 	'سلام قلبي عليكم يا حبايب!',
-	'علي الذهاب.',
-	'الباب يفوت جمل',
-	'لا تنسى ان تعود!',
-	'أراك لاحقا!',
-	'مقلع.',
-	'اميدوس, اميقو.',
-	'رحلك!',
-	'وين رايح؟.',
-	'لا تنظر الى الخلف ابداً!',
-	'او ريفيرو!',
-	'اترك الشر يتركك!',
-	'سايونارا!',
-	'شياو!',
-	'لا تنسى ان تحذف سجل التصفح!',
-	'غير العالم صديقي. الى اللقاء.',
-	'اختر بعناية!'
+	'علي الذهاب.'
 }
 
 local greeter_message = wibox.widget {
-	markup = 'اختر بعناية!',
+	markup = 'Choose carefully!',
 	font = 'Google Sana 45',
 	align = 'center',
 	margins = dpi(10),
@@ -48,7 +33,7 @@ local greeter_message = wibox.widget {
 }
 
 local profile_name = wibox.widget {
-	markup = 'احمد',
+	markup = 'script',
 	font = 'Google Sana 12',
 	align = 'center',
 	valign = 'center',
@@ -183,11 +168,11 @@ local reboot_command = function()
 	awesome.emit_signal('module::exit_screen:hide')
 end
 
-local poweroff = build_power_button('ايقاف التشغيل', icons.power, poweroff_command)
-local reboot = build_power_button('اعادة التشغيل', icons.restart, reboot_command)
-local suspend = build_power_button('رقود', icons.sleep, suspend_command)
-local logout = build_power_button('تسجيل خروج', icons.logout, logout_command)
-local lock = build_power_button('قفل الشاشة', icons.lock, lock_command)
+local poweroff = build_power_button('Shutdown', icons.power, poweroff_command)
+local reboot = build_power_button('Reboot', icons.restart, reboot_command)
+local suspend = build_power_button('Suspend', icons.sleep, suspend_command)
+local logout = build_power_button('Log out', icons.logout, logout_command)
+local lock = build_power_button('Screen lock', icons.lock, lock_command)
 
 local create_exit_screen = function(s)
 	s.exit_screen = wibox

@@ -24,8 +24,8 @@ local run_once = function(cmd)
             end
             naughty.notification(
                 {
-                    app_name = "بدء تشغيل البرامج",
-                    title = "<span font='" .. beautiful.title_font .. "' > عذرا! حدث خطأ اثناء بدء تشغيل البرنامج! </span>",
+                    app_name = "Program starting up",
+                    title = "<span font='" .. beautiful.title_font .. "' > Excuse me! An error occurred while starting the program! </span>",
                     font = beautiful.title_font,
                     message = stderr:gsub("%\n", ""),
                     timeout = 20,

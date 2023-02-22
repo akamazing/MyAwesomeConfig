@@ -59,8 +59,8 @@ local function worker(args)
 	}
 
 	local function set_no_playing()
-		music:get_children_by_id("title_id")[1].text = "لا توجد موسيقى قيد التشغيل"
-		music:get_children_by_id("artist_id")[1].text = "لا يوجد فنان"
+		music:get_children_by_id("title_id")[1].text = "There is no music playing"
+		music:get_children_by_id("artist_id")[1].text = "No artist"
 		music:get_children_by_id("play_button_id")[1].text = ""
 		music:get_children_by_id("image_id")[1].image = beautiful.music_back
 		is_playing = false
@@ -108,13 +108,13 @@ local function worker(args)
 		local image_url = string.gsub(art_url:gsub("file://", ""), "^%s*(.-)%s*$", "%1")
 
 		if string.gsub(title, "^%s*(.-)%s*$", "%1") == nil or string.gsub(title, "^%s*(.-)%s*$", "%1") == "" then
-			music:get_children_by_id("title_id")[1].text = "لا يوجد عنوان"
+			music:get_children_by_id("title_id")[1].text = "No music"
 		else
 			music:get_children_by_id("title_id")[1].text = string.gsub(title, "^%s*(.-)%s*$", "%1")
 		end
 
 		if string.gsub(artist, "^%s*(.-)%s*$", "%1") == nil or string.gsub(artist, "^%s*(.-)%s*$", "%1") == "" then
-			music:get_children_by_id("artist_id")[1].text = "لا يوجد فنان"
+			music:get_children_by_id("artist_id")[1].text = "No artist"
 		else
 			music:get_children_by_id("artist_id")[1].text = string.gsub(artist, "^%s*(.-)%s*$", "%1")
 		end

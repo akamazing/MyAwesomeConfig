@@ -18,7 +18,7 @@ local global_keys =
 		hotkeys_popup.show_help,
 		{
 			description = "عرض المساعدة",
-			group = "عمليات اوسم"
+			group = "AWESOMEWM"
 		}
 	),
 	awful.key(
@@ -38,7 +38,7 @@ local global_keys =
 		awful.tag.history.restore,
 		{
 			description = "التنقل بين اخر مكانين",
-			group = "عمليات الشاشة"
+			group = "SCREEN OPERATIONS"
 		}
 	),
 	awful.key(
@@ -47,7 +47,7 @@ local global_keys =
 		function()
 			awful.client.focus.byidx(1)
 		end,
-		{description = "التركيز على السابق بالفهرس", group = "عمليات الشاشة"}
+		{description = "التركيز على السابق بالفهرس", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -55,7 +55,7 @@ local global_keys =
 		function()
 			awful.client.focus.byidx(-1)
 		end,
-		{description = "التركيز على التالي بالفهرس", group = "عمليات الشاشة"}
+		{description = "التركيز على التالي بالفهرس", group = "SCREEN OPERATIONS"}
 	),
 	-- awful.key(
 	-- 	{modkey},
@@ -116,7 +116,7 @@ local global_keys =
 				_G.central_panel_mode = "today_mode"
 			end
 		end,
-		{description = "قتح مركز الاشعارات", group = "عمليات الشاشة"}
+		{description = "قتح مركز الاشعارات", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -124,7 +124,7 @@ local global_keys =
 		function()
 			awesome.emit_signal("widget::open_left_menu")
 		end,
-		{description = "قتح القائمة على اليسار", group = "عمليات الشاشة"}
+		{description = "قتح القائمة على اليسار", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -132,7 +132,7 @@ local global_keys =
 		function()
 			awesome.emit_signal("widget::open_music")
 		end,
-		{description = "قتح اداة الموسيقى", group = "عمليات الشاشة"}
+		{description = "Open the music tool", group = "SCREEN OPERATIONS"}
 	),
 	-- Applicatopn menu
 	-- Power menu
@@ -157,7 +157,7 @@ local global_keys =
 		function()
 			awful.client.swap.byidx(1)
 		end,
-		{description = "غير ترتيب النافذة مكان النافذة لليمين", group = "عمليات الشاشة"}
+		{description = "Change the window order to the right window", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Shift"},
@@ -165,7 +165,7 @@ local global_keys =
 		function()
 			awful.client.swap.byidx(-1)
 		end,
-		{description = "غير ترتيب النافذة مكان النافذة لليسار", group = "عمليات الشاشة"}
+		{description = "Change the window order to the left window", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Control"},
@@ -173,7 +173,7 @@ local global_keys =
 		function()
 			awful.screen.focus_relative(1)
 		end,
-		{description = "ركز على الشاشة التالية", group = "عمليات الشاشة"}
+		{description = "Focus on the next screen", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Control"},
@@ -181,15 +181,15 @@ local global_keys =
 		function()
 			awful.screen.focus_relative(-1)
 		end,
-		{description = "ركز على الشاشة السابقة", group = "عمليات الشاشة"}
+		{description = "Focus on the previous screen", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
 		"u",
 		awful.client.urgent.jumpto,
 		{
-			description = "الانتقال الى العميل الطارئ",
-			group = "عمليات الشاشة"
+			description = "Go to the urgent application",
+			group = "SCREEN OPERATIONS"
 		}
 	),
 	awful.key(
@@ -201,15 +201,15 @@ local global_keys =
 				client.focus:raise()
 			end
 		end,
-		{description = "عد للخلف", group = "عمليات الشاشة"}
+		{description = "Previous", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Control"},
 		"r",
 		awesome.restart,
 		{
-			description = "اعد تشغيل اوسم",
-			group = "عمليات اوسم"
+			description = "Reload config",
+			group = "AWESOMEWM"
 		}
 	),
 	awful.key(
@@ -217,8 +217,8 @@ local global_keys =
 		"q",
 		awesome.quit,
 		{
-			description = "اخرج من اوسم",
-			group = "عمليات اوسم"
+			description = "Exit awesome",
+			group = "AWESOMEWM"
 		}
 	),
 	awful.key(
@@ -227,7 +227,7 @@ local global_keys =
 		function()
 			awful.tag.incmwfact(0.05)
 		end,
-		{description = "زيادة عامل العرض الرئيسي", group = "عمليات الشاشة"}
+		{description = "زيادة عامل العرض الرئيسي", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, altkey},
@@ -235,7 +235,7 @@ local global_keys =
 		function()
 			awful.tag.incmwfact(-0.05)
 		end,
-		{description = "تقليل عامل العرض الرئيسي", group = "عمليات الشاشة"}
+		{description = "Reduce the main width factor", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Control"},
@@ -247,7 +247,7 @@ local global_keys =
 				c:emit_signal("request::activate", "key.unminimize", {raise = true})
 			end
 		end,
-		{description = "استعادة المصغر", group = "عمليات الشاشة"}
+		{description = "استعادة المصغر", group = "SCREEN OPERATIONS"}
 	),
 	-- Media control
 	awful.key(
@@ -264,7 +264,7 @@ local global_keys =
 				end
 			)
 		end,
-		{description = "Volume down 10", group = "ميديا"}
+		{description = "Volume down 10", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -280,7 +280,7 @@ local global_keys =
 				end
 			)
 		end,
-		{description = "Volume up 10", group = "ميديا"}
+		{description = "Volume up 10", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -288,7 +288,7 @@ local global_keys =
 		function()
 			awful.spawn("amixer set Master 1+ toggle", false)
 		end,
-		{description = "Toggle mute", group = "ميديا"}
+		{description = "Toggle mute", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -296,7 +296,7 @@ local global_keys =
 		function()
 			awful.spawn("amixer set Capture toggle", false)
 		end,
-		{description = "التبديل بين الوضع الصامت للمكرفون", group = "ميديا"}
+		{description = "Switch between microphone mute mode", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -304,7 +304,7 @@ local global_keys =
 		function()
 			awful.spawn("clementine -t", false)
 		end,
-		{description = "Play Clementine", group = "ميديا"}
+		{description = "Play Clementine", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -312,7 +312,7 @@ local global_keys =
 		function()
 			awful.spawn("clementine -f", false)
 		end,
-		{description = "Next Song", group = "ميديا"}
+		{description = "Next Song", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -320,7 +320,7 @@ local global_keys =
 		function()
 			awful.spawn("clementine -r", false)
 		end,
-		{description = "Previous Song", group = "ميديا"}
+		{description = "Previous Song", group = "MEDIA"}
 	),
 	awful.key(
 		{},
@@ -328,7 +328,7 @@ local global_keys =
 		function()
 			awful.spawn("clementine -s", false)
 		end,
-		{description = "Stop Clementine", group = "ميديا"}
+		{description = "Stop Clementine", group = "MEDIA"}
 	),
 	-- الاضاءة
 	awful.key(
@@ -473,7 +473,7 @@ for i = 1, 9 do
 			function()
 				local focused = awful.screen.focused()
 				-- #focused.tags + 1 - i to revers array to support RTL layout
-				local tag = focused.tags[#focused.tags + 1 - i]
+				local tag = focused.tags[i]
 				if tag then
 					tag:view_only()
 				end
@@ -486,7 +486,7 @@ for i = 1, 9 do
 			"#" .. i + 9,
 			function()
 				local focused = awful.screen.focused()
-				local tag = focused.tags[#focused.tags + 1 - i]
+				local tag = focused.tags[i]
 				if tag then
 					awful.tag.viewtoggle(tag)
 				end
@@ -499,7 +499,7 @@ for i = 1, 9 do
 			"#" .. i + 9,
 			function()
 				if client.focus then
-					local tag = client.focus.screen.tags[#client.focus.screen.tags + 1 - i]
+					local tag = client.focus.screen.tags[i]
 					if tag then
 						client.focus:move_to_tag(tag)
 					end
@@ -513,7 +513,7 @@ for i = 1, 9 do
 			"#" .. i + 9,
 			function()
 				if client.focus then
-					local tag = client.focus.screen.tags[#client.focus.screen.tags + 1 - i]
+					local tag = client.focus.screen.tags[i]
 					if tag then
 						client.focus:toggle_tag(tag)
 					end

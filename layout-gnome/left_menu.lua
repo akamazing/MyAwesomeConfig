@@ -59,7 +59,7 @@ local function factory(args)
 
     local quick_header =
         wibox.widget {
-        text = "احمد",
+        text = "Script",
         font = text_font,
         align = "center",
         valign = "center",
@@ -78,7 +78,7 @@ local function factory(args)
     local open_settings =
         helpers.add_text_icon_widget {
             
-        text = "الاعدادات",
+        text = "System settings",
         icon = "",
         icon_font = beautiful.iconfont,
         text_font = text_font
@@ -86,7 +86,7 @@ local function factory(args)
 
     local wifi_settings =
         helpers.add_text_icon_widget {
-        text = "اعدادات الاتصال",
+        text = "Network settings",
         icon = "",
         icon_font = beautiful.iconfont,
         text_font = text_font
@@ -94,7 +94,7 @@ local function factory(args)
 
     local sound_settings =
         helpers.add_text_icon_widget {
-        text = "اعدادات الصوت",
+        text = "Sound settings",
         icon = "",
         icon_font = beautiful.iconfont,
         text_font = text_font

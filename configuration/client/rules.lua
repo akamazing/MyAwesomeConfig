@@ -163,7 +163,7 @@ ruled.client.connect_signal(
 				}
 			},
 			properties = {
-				tag = tag_names[7],
+				tag = tag_names[1],
 				switch_to_tags = true,
 				size_hints_honor = false,
 				titlebars_enabled = false
@@ -182,7 +182,7 @@ ruled.client.connect_signal(
 				}
 			},
 			properties = {
-				tag = tag_names[6]
+				tag = tag_names[2]
 			}
 		}
 
@@ -205,7 +205,7 @@ ruled.client.connect_signal(
 				}
 			},
 			properties = {
-				tag = tag_names[5]
+				tag = tag_names[3]
 			}
 		}
 
@@ -243,7 +243,7 @@ ruled.client.connect_signal(
 				}
 			},
 			properties = {
-				tag = tag_names[1],
+				tag = tag_names[7],
 				switch_to_tags = false,
 				placement = awful.placement.centered
 			}
@@ -279,7 +279,7 @@ ruled.client.connect_signal(
 				}
 			},
 			properties = {
-				tag = tag_names[2]
+				tag = tag_names[6]
 			}
 		}
 

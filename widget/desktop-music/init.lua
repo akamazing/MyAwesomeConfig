@@ -87,15 +87,15 @@ local function worker(args)
 		final:get_children_by_id("title_scroll")[1]:pause()
 
 		final:get_children_by_id("music_title")[1].text = ""
-		final:get_children_by_id("music_title")[1].text = "لا يوجد عنوان"
+		final:get_children_by_id("music_title")[1].text = "No music playing"
 		if string.gsub(title, "^%s*(.-)%s*$", "%1") == nil or string.gsub(title, "^%s*(.-)%s*$", "%1") == "" then
-			final:get_children_by_id("music_title")[1].text = "لا يوجد عنوان"
+			final:get_children_by_id("music_title")[1].text = "No music playing"
 		else
 			final:get_children_by_id("music_title")[1].text = string.gsub(title, "^%s*(.-)%s*$", "%1")
 		end
 
 		if string.gsub(artist, "^%s*(.-)%s*$", "%1") == nil or string.gsub(artist, "^%s*(.-)%s*$", "%1") == "" then
-			final:get_children_by_id("artist")[1].text = "لا يوجد فنان"
+			final:get_children_by_id("artist")[1].text = "No artist"
 		else
 			final:get_children_by_id("artist")[1].text = string.gsub(artist, "^%s*(.-)%s*$", "%1")
 		end
@@ -111,7 +111,7 @@ local function worker(args)
 				function(stdout)
 					final:get_children_by_id("title_scroll")[1]:pause()
 					final:get_children_by_id("music_title")[1].text = ""
-					final:get_children_by_id("music_title")[1].text = "لا يوجد عنوان"
+					final:get_children_by_id("music_title")[1].text = "No music playing"
 					if string.find(string.gsub(stdout, "^%s*(.-)%s*$", "%1"), "No player could handle this command") or stdout == "" then
 						update_widget("", "")
 					else

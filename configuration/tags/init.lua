@@ -6,31 +6,16 @@ local apps = require("configuration.apps")
 
 local tags = {
 	{
-		type = "multimedia",
-		-- icon = icons.multimedia,
-		default_app = apps.default.multimedia,
-		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.tile.left
-		-- gap = 0
+		type = "terminal",
+		-- icon = icons.terminal,
+		default_app = apps.default.terminal,
+		layout = awful.layout.suit.tile.left,
+		gap = beautiful.useless_gap
 	},
 	{
-		type = "social",
-		-- icon = icons.social,
-		default_app = apps.default.social,
-		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.tile.left
-	},
-	{
-		type = "development",
-		-- icon = icons.development,
-		default_app = apps.default.development,
-		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.tile.left
-	},
-	{
-		type = "files",
-		-- icon = icons.file_manager,
-		default_app = apps.default.file_manager,
+		type = "internet",
+		-- icon = icons.web_browser,
+		default_app = apps.default.web_browser,
 		gap = beautiful.useless_gap,
 		layout = awful.layout.suit.tile.left
 	},
@@ -42,18 +27,33 @@ local tags = {
 		layout = awful.layout.suit.tile.left
 	},
 	{
-		type = "internet",
-		-- icon = icons.web_browser,
-		default_app = apps.default.web_browser,
+		type = "files",
+		-- icon = icons.file_manager,
+		default_app = apps.default.file_manager,
 		gap = beautiful.useless_gap,
 		layout = awful.layout.suit.tile.left
 	},
 	{
-		type = "terminal",
-		-- icon = icons.terminal,
-		default_app = apps.default.terminal,
-		layout = awful.layout.suit.tile.left,
-		gap = beautiful.useless_gap
+		type = "development",
+		-- icon = icons.development,
+		default_app = apps.default.development,
+		gap = beautiful.useless_gap,
+		layout = awful.layout.suit.tile.left
+	},
+	{
+		type = "social",
+		-- icon = icons.social,
+		default_app = apps.default.social,
+		gap = beautiful.useless_gap,
+		layout = awful.layout.suit.tile.left
+	},
+	{
+		type = "multimedia",
+		-- icon = icons.multimedia,
+		default_app = apps.default.multimedia,
+		gap = beautiful.useless_gap,
+		layout = awful.layout.suit.tile.left
+		-- gap = 0
 	}
 }
 

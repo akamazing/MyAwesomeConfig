@@ -215,13 +215,7 @@ awful.screen.connect_for_each_screen(
                 -- tooltip_bg = beautiful.cpu_temp_color,
                 -- tooltip_fg = beautiful.cpu_temp_icon_fg_color,
             }
-
-            s.prayer_times =
-                require("widget.prayer-times") {
-                widget_bg = beautiful.weather_widget_bg_color or beautiful.weather_color,
-                widget_fg = beautiful.weather_widget_text_color or beautiful.weather_text_color
-                -- city = "Cairo",
-            }
+            
         end
 
         s.tray_toggler = require("widget.tray-toggle")
@@ -251,72 +245,34 @@ awful.screen.connect_for_each_screen(
         s.mywibox:setup {
             layout = wibox.layout.manual,
             --------------------------------
-            --------- Left widgets ---------
+            --------- Right widgets ---------
             --------------------------------
             {
                 point = function(geo, args)
                     return {
-                        x = 0,
+                        x = args.parent.width - geo.width,
                         y = (args.parent.height / 2 + (geo.height / 2)) - geo.height
                     }
                 end,
                 forced_height = dpi(30),
                 layout = wibox.layout.fixed.horizontal,
                 ---------------
-                -- Left Menu --
+                -- Right Menu --
                 ---------------
-                helpers.set_widget_block {
-                    widget = s.left_menu,
-                    left = dpi(6),
-                    right = dpi(0),
-                    bg = beautiful.bg_normal,
-                    fg = beautiful.fg_normal
-                },
+
                 -------------
-                -- Systray --
+                -- Weather --
                 -------------
                 helpers.set_widget_block {
-                    widget = helpers.set_widget_block {
-                        widget = s.systray,
-                        bg = beautiful.transparent,
-                        right = 2
-                    },
-                    bg = beautiful.transparent,
-                    top = 3
-                    -- bottom = 3
-                },
-                s.tray_toggler,
-                helpers.set_space(6),
-                ---------------------
-                -- keyboard layout --
-                ---------------------
-                helpers.set_widget_block {
-                    widget = {
-                        layout = wibox.layout.fixed.horizontal,
-                        helpers.set_widget_block {
-                            widget = mykeyboardlayout,
-                            bg = beautiful.keyboard_layout_color,
-                            fg = beautiful.keyboard_text_color,
-                            shape = helpers.left_rounded_rect(beautiful.widgets_corner_radius),
-                            left = 2,
-                            right = 2
-                        },
-                        helpers.set_widget_block {
-                            widget = helpers.add_text("", beautiful.keyboard_icon_fg_color),
-                            bg = beautiful.keyboard_icon_bg_color,
-                            font = beautiful.iconfont,
-                            shape = helpers.right_rounded_rect(beautiful.widgets_corner_radius),
-                            right = 5,
-                            left = 5
-                        }
-                    },
-                    bg = beautiful.keyboard_layout_whole_color or beautiful.transparent,
+                    widget = s.weather,
+                    -- bg = beautiful.weather_color_whole_color or beautiful.transparent,
                     font = beautiful.iconfont,
                     shape = helpers.rrect(beautiful.widgets_corner_radius),
                     margin_top = 3,
                     margin_bottom = 3
                 },
                 helpers.set_space(6),
+                
                 ---------------
                 -- Net speed --
                 ---------------
@@ -346,76 +302,72 @@ awful.screen.connect_for_each_screen(
                     margin_bottom = 3
                 },
                 helpers.set_space(6),
-                ------------
-                -- Volume --
-                ------------
+
+                -------------
+                -- Battery --
+                -------------
                 helpers.set_widget_block {
-                    widget = {
-                        layout = wibox.layout.fixed.horizontal,
-                        helpers.set_widget_block {
-                            widget = s.volume,
-                            bg = beautiful.volume_widget_color,
-                            fg = beautiful.volume_widget_text_color,
-                            shape = helpers.left_rounded_rect(beautiful.widgets_corner_radius),
-                            left = 7,
-                            right = 5
-                        },
-                        helpers.set_widget_block {
-                            widget = helpers.add_text("", beautiful.volume_icon_fg_color),
-                            bg = beautiful.volume_icon_bg_color,
-                            right = 5,
-                            shape = helpers.right_rounded_rect(beautiful.widgets_corner_radius),
-                            font = beautiful.iconfont,
-                            left = 5
-                        }
-                    },
-                    bg = beautiful.volume_widget_whole_color or beautiful.transparent,
+                    widget = s.bat,
+                    bg = beautiful.battery_whole_color or beautiful.transparent,
                     font = beautiful.iconfont,
                     shape = helpers.rrect(beautiful.widgets_corner_radius),
                     margin_top = 3,
                     margin_bottom = 3
                 },
                 helpers.set_space(6),
-                ----------------
-                -- Brightness --
-                ----------------
+
+                ---------------------
+                -- keyboard layout --
+                ---------------------
                 helpers.set_widget_block {
                     widget = {
                         layout = wibox.layout.fixed.horizontal,
                         helpers.set_widget_block {
-                            widget = s.brightness,
-                            bg = beautiful.brightness_cr_color,
-                            fg = beautiful.brightness_cr_text_color,
+                            widget = mykeyboardlayout,
+                            bg = beautiful.keyboard_layout_color,
+                            fg = beautiful.keyboard_text_color,
                             shape = helpers.left_rounded_rect(beautiful.widgets_corner_radius),
-                            left = 7,
-                            right = 5
+                            left = 2,
+                            right = 2
                         },
                         helpers.set_widget_block {
-                            widget = helpers.add_text("", beautiful.brightness_icon_fg_color),
-                            bg = beautiful.brightness_icon_bg_color,
-                            right = 5,
-                            shape = helpers.right_rounded_rect(beautiful.widgets_corner_radius),
+                            widget = helpers.add_text("", beautiful.keyboard_icon_fg_color),
+                            bg = beautiful.keyboard_icon_bg_color,
                             font = beautiful.iconfont,
+                            shape = helpers.right_rounded_rect(beautiful.widgets_corner_radius),
+                            right = 5,
                             left = 5
                         }
                     },
-                    bg = beautiful.brightness_cr_whole_color or beautiful.transparent,
+                    bg = beautiful.keyboard_layout_whole_color or beautiful.transparent,
                     font = beautiful.iconfont,
                     shape = helpers.rrect(beautiful.widgets_corner_radius),
                     margin_top = 3,
                     margin_bottom = 3
                 },
-                helpers.set_space(6),
+
                 -------------
-                -- Weather --
+                -- Systray --
                 -------------
                 helpers.set_widget_block {
-                    widget = s.weather,
-                    -- bg = beautiful.weather_color_whole_color or beautiful.transparent,
-                    font = beautiful.iconfont,
-                    shape = helpers.rrect(beautiful.widgets_corner_radius),
-                    margin_top = 3,
-                    margin_bottom = 3
+                    widget = helpers.set_widget_block {
+                        widget = s.systray,
+                        bg = beautiful.transparent,
+                        right = 2
+                    },
+                    bg = beautiful.transparent,
+                    top = 3
+                    -- bottom = 3
+                },
+                s.tray_toggler,
+                
+                -- s.mypromptbox,
+                helpers.set_space(6),
+                helpers.set_widget_block {
+                    widget = s.mylayoutbox,
+                    top = 3,
+                    bottom = 3,
+                    bg = beautiful.transparent
                 }
             },
             ---------------------------------
@@ -461,41 +413,101 @@ awful.screen.connect_for_each_screen(
                 end
             },
             ---------------------------------
-            --------- Right widgets ---------
+            --------- Left widgets ---------
             ---------------------------------
             {
                 point = function(geo, args)
                     return {
-                        x = args.parent.width - geo.width,
+                        x = 0,
                         y = (args.parent.height / 2 + (geo.height / 2)) - geo.height
                     }
                 end,
                 layout = wibox.layout.fixed.horizontal,
                 forced_height = dpi(30),
-                ------------------
-                -- prayer times --
-                ------------------
+                -- Notification center
                 helpers.set_widget_block {
-                    widget = s.prayer_times,
-                    bg = beautiful.battery_whole_color or beautiful.transparent,
+                    widget = s.left_menu,
+                    left = dpi(6),
+                    right = dpi(0),
+                    bg = beautiful.bg_normal,
+                    fg = beautiful.fg_normal
+                },
+                helpers.set_space(6),
+
+                helpers.set_widget_block {
+                    widget = helpers.set_widget_block {
+                        widget = s.mytaglist,
+                        shape = helpers.rrect(beautiful.widgets_corner_radius)
+                    },
+                    top = 3,
+                    bottom = 3,
+                    bg = beautiful.transparent
+                },
+                helpers.set_space(6),
+
+                ------------
+                -- Volume --
+                ------------
+                helpers.set_widget_block {
+                    widget = {
+                        layout = wibox.layout.fixed.horizontal,
+                        helpers.set_widget_block {
+                            widget = s.volume,
+                            bg = beautiful.volume_widget_color,
+                            fg = beautiful.volume_widget_text_color,
+                            shape = helpers.left_rounded_rect(beautiful.widgets_corner_radius),
+                            left = 7,
+                            right = 5
+                        },
+                        helpers.set_widget_block {
+                            widget = helpers.add_text("", beautiful.volume_icon_fg_color),
+                            bg = beautiful.volume_icon_bg_color,
+                            right = 5,
+                            shape = helpers.right_rounded_rect(beautiful.widgets_corner_radius),
+                            font = beautiful.iconfont,
+                            left = 5
+                        }
+                    },
+                    bg = beautiful.volume_widget_whole_color or beautiful.transparent,
                     font = beautiful.iconfont,
                     shape = helpers.rrect(beautiful.widgets_corner_radius),
                     margin_top = 3,
                     margin_bottom = 3
                 },
                 helpers.set_space(6),
-                -------------
-                -- Battery --
-                -------------
+
+                ----------------
+                -- Brightness --
+                ----------------
                 helpers.set_widget_block {
-                    widget = s.bat,
-                    bg = beautiful.battery_whole_color or beautiful.transparent,
+                    widget = {
+                        layout = wibox.layout.fixed.horizontal,
+                        helpers.set_widget_block {
+                            widget = s.brightness,
+                            bg = beautiful.brightness_cr_color,
+                            fg = beautiful.brightness_cr_text_color,
+                            shape = helpers.left_rounded_rect(beautiful.widgets_corner_radius),
+                            left = 7,
+                            right = 5
+                        },
+                        helpers.set_widget_block {
+                            widget = helpers.add_text("", beautiful.brightness_icon_fg_color),
+                            bg = beautiful.brightness_icon_bg_color,
+                            right = 5,
+                            shape = helpers.right_rounded_rect(beautiful.widgets_corner_radius),
+                            font = beautiful.iconfont,
+                            left = 5
+                        }
+                    },
+                    bg = beautiful.brightness_cr_whole_color or beautiful.transparent,
                     font = beautiful.iconfont,
                     shape = helpers.rrect(beautiful.widgets_corner_radius),
                     margin_top = 3,
                     margin_bottom = 3
                 },
+
                 helpers.set_space(6),
+
                 --------------
                 -- CPU TEMP --
                 --------------
@@ -532,25 +544,8 @@ awful.screen.connect_for_each_screen(
                     bg = beautiful.transparent,
                     top = 3,
                     bottom = 3
-                },
-                helpers.set_space(6),
-                helpers.set_widget_block {
-                    widget = helpers.set_widget_block {
-                        widget = s.mytaglist,
-                        shape = helpers.rrect(beautiful.widgets_corner_radius)
-                    },
-                    top = 3,
-                    bottom = 3,
-                    bg = beautiful.transparent
-                },
-                -- s.mypromptbox,
-                helpers.set_space(6),
-                helpers.set_widget_block {
-                    widget = s.mylayoutbox,
-                    top = 3,
-                    bottom = 3,
-                    bg = beautiful.transparent
-                }
+                },                
+                
             }
         }
     end

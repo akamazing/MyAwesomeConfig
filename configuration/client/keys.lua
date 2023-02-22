@@ -14,7 +14,7 @@ local client_keys =
 			c.fullscreen = not c.fullscreen
 			c:raise()
 		end,
-		{description = "تبديل ملئ الشاشة", group = "عمليات الشاشة"}
+		{description = "تبديل ملئ الشاشة", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -22,16 +22,16 @@ local client_keys =
 		function(c)
 			c:kill()
 		end,
-		{description = "اغلاق", group = "عمليات الشاشة"}
+		{description = "اغلاق", group = "SCREEN OPERATIONS"}
 	),
-	awful.key({modkey}, "f", awful.client.floating.toggle, {description = "جعل النافذه عائمة", group = "عمليات الشاشة"}),
+	awful.key({modkey}, "f", awful.client.floating.toggle, {description = "جعل النافذه عائمة", group = "SCREEN OPERATIONS"}),
 	awful.key(
 		{modkey, "Control"},
 		"Return",
 		function(c)
 			c:swap(awful.client.getmaster())
 		end,
-		{description = "الانتقال الى الرئيسي", group = "عمليات الشاشة"}
+		{description = "الانتقال الى الرئيسي", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -41,7 +41,7 @@ local client_keys =
 		end,
 		{
 			description = "انقل الى الشاشة",
-			group = "عمليات الشاشة"
+			group = "SCREEN OPERATIONS"
 		}
 	),
 	awful.key(
@@ -52,7 +52,7 @@ local client_keys =
 		end,
 		{
 			description = "جعل التطبيق فوق الجميع",
-			group = "عمليات الشاشة"
+			group = "SCREEN OPERATIONS"
 		}
 	),
 	awful.key(
@@ -63,7 +63,7 @@ local client_keys =
 			-- minimized, since minimized clients can't have the focus.
 			c.minimized = true
 		end,
-		{description = "تصغير الى شريط المهام", group = "عمليات الشاشة"}
+		{description = "تصغير الى شريط المهام", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Shift"},
@@ -72,7 +72,7 @@ local client_keys =
 			c.maximized = not c.maximized
 			c:raise()
 		end,
-		{description = "تكبير - تصغير", group = "عمليات الشاشة"}
+		{description = "تكبير - تصغير", group = "SCREEN OPERATIONS"}
 	)
 	-- awful.key(
 	-- 	{modkey, "Control"},
