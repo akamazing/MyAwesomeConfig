@@ -55,12 +55,12 @@ local widget_button =
 local action_widget =
 	wibox.widget {
 	{
+		action_name,
+		nil,
 		{
 			widget_button,
 			layout = wibox.layout.fixed.horizontal
 		},
-		nil,
-		action_name,
 		layout = wibox.layout.align.horizontal
 	},
 	left = dpi(24),

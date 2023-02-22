@@ -10,19 +10,19 @@ local helpers = require("helpers")
 
 local action_name =
 	wibox.widget {
-	text = "تقليل الضوء الازرق",
+	text = "Blue light",
 	font = beautiful.uifont,
-	align = "right",
+	align = "left",
 	widget = wibox.widget.textbox
 }
 
 local action_name =
 	helpers.add_text_icon_widget {
-	text = "تقليل الضوء الازرق",
+	text = "Blue light",
 	icon = "",
 	ltr = true,
 	icon_font = beautiful.iconfont,
-	forced_width = dpi(135),
+	forced_width = dpi(97),
 	text_font = beautiful.uifont
 }
 
@@ -182,12 +182,12 @@ widget_button:buttons(
 local action_widget =
 	wibox.widget {
 	{
+		action_name,
+		nil,
 		{
 			widget_button,
 			layout = wibox.layout.fixed.horizontal
 		},
-		nil,
-		action_name,
 		layout = wibox.layout.align.horizontal
 	},
 	left = dpi(24),

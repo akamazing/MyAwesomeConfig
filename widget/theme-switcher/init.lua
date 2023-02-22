@@ -257,7 +257,7 @@ local function worker(args)
         {
             point = function(geo, args)
                 return {
-                    x = args.parent.width - geo.width,
+                    x = 0,
                     y = args.parent.height - geo.height
                 }
             end,

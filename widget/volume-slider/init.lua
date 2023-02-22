@@ -24,7 +24,7 @@ local action_level =
 	wibox.widget {
 	{
 		icon,
-		widget = clickable_container
+		widget = clickable_container,
 	},
 	bg = beautiful.transparent,
 	shape = gears.shape.circle,
@@ -154,7 +154,7 @@ local volume_setting = function(args)
 	local slider_top = args.slider_top or dpi(12)
 	local slider_bottom = args.slider_bottom or dpi(12)
 	local slider_left = args.slider_left or dpi(24)
-	local slider_right = args.slider_right or dpi(60)
+	local slider_right = args.slider_right or dpi(12)
 
 	local icon_top = args.icon_top or dpi(12)
 	local icon_bottom = args.icon_bottom or dpi(12)
@@ -167,12 +167,7 @@ local volume_setting = function(args)
 		wibox.widget {
 		{
 			{
-				point = function(geo, args)
-					return {
-						x = args.parent.width - geo.width,
-						y = (args.parent.height / 2 + (geo.height / 2)) - geo.height
-					}
-				end,
+				left = left,
 				action_level,
 				top = icon_top,
 				bottom = icon_bottom,
@@ -183,7 +178,7 @@ local volume_setting = function(args)
 				top = slider_top,
 				bottom = slider_bottom,
 				right = slider_right,
-				left = slider_left,
+				left = dpi(60),
 				widget = wibox.container.margin
 			},
 			layout = wibox.layout.manual

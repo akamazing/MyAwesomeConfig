@@ -19,7 +19,7 @@ local helpers = require("helpers")
 
 local action_name =
 	helpers.add_text_icon_widget {
-	text = "تاثير الضباب", --
+	text = "Blur effect", --
 	icon = "",
 	ltr = true,
 	icon_font = beautiful.iconfont,
@@ -136,12 +136,12 @@ widget_button:buttons(
 local action_widget =
 	wibox.widget {
 	{
+		action_name,
+		nil,
 		{
 			widget_button,
 			layout = wibox.layout.fixed.horizontal
 		},
-		nil,
-		action_name,
 		layout = wibox.layout.align.horizontal
 	},
 	left = dpi(24),

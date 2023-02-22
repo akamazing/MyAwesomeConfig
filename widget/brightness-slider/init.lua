@@ -164,22 +164,17 @@ local brightness_setting =
 	wibox.widget {
 	{
 		{
-			point = function(geo, args)
-				return {
-					x = args.parent.width - geo.width,
-					y = (args.parent.height / 2 + (geo.height / 2)) - geo.height
-				}
-			end,
 			action_level,
 			top = dpi(12),
 			bottom = dpi(12),
 			widget = wibox.container.margin
 		},
 		{
+			left = dpi(36),
 			slider,
 			top = dpi(12),
 			bottom = dpi(12),
-			right = dpi(60),
+			right = dpi(12),
 			widget = wibox.container.margin
 		},
 		layout = wibox.layout.manual

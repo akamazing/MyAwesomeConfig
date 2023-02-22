@@ -17,9 +17,7 @@ local msg_table = {
 	'Farewell!!! UwU',
 	'Bye Felicia! UwU',
 	'See You Later Alligator! UwU',
-	'So long, and thanks for all the fish! UwU',
-	'سلام قلبي عليكم يا حبايب!',
-	'علي الذهاب.'
+	'So long, and thanks for all the fish! UwU'
 }
 
 local greeter_message = wibox.widget {

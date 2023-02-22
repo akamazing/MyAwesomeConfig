@@ -88,9 +88,8 @@ function helpers.add_text_icon_widget(args)
     local forced_width = args.forced_width
     local forced_height = args.forced_height or dpi(50)
 
-    local ltr = args.ltr or false
     -- Default to true for me
-    ltr = true
+    local ltr = args.ltr or true
 
     local left = function(geo, args)
         return {

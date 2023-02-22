@@ -24,7 +24,6 @@ local action_name =
 	helpers.add_text_icon_widget {
 	text = "Flight mode",
 	icon = "",
-	ltr = true,
 	icon_font = beautiful.iconfont,
 	forced_width = dpi(100),
 	text_font = beautiful.uifont
@@ -172,12 +171,12 @@ gears.timer {
 local action_widget =
 	wibox.widget {
 	{
+		action_name,
+		nil,
 		{
 			widget_button,
 			layout = wibox.layout.fixed.horizontal
 		},
-		nil,
-		action_name,
 		layout = wibox.layout.align.horizontal
 	},
 	left = dpi(24),
