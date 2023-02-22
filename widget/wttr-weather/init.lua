@@ -92,7 +92,7 @@ local function factory(args)
     --------------------
     local header =
         wibox.widget {
-        text = "الصقس",
+        text = "Weather",
         font = text_font,
         align = "center",
         valign = "center",
@@ -534,7 +534,7 @@ local function factory(args)
         3600,
         function(_, stdout)
             if stdout == "" then
-                number_text_widget.text = "خدمة الطقس غير متوفرة"
+                number_text_widget.text = "Weather service is not available"
                 return
             end
 
@@ -931,10 +931,10 @@ local function factory(args)
             if tonumber(weather_json.weather[1].mintempC) < 7 and not cold_weather_notified then
                 naughty.notification(
                     {
-                        app_name = "الطقس",
-                        title = "<span font='" .. beautiful.title_font .. "' > طقس بارد! 😓</span> ",
+                        app_name = "Weather",
+                        title = "<span font='" .. beautiful.title_font .. "' >Cold weather! 😓</span> ",
                         font = beautiful.title_font,
-                        message = "درجة حرارة الطقس الصغرى اليوم " .. weather_json.weather[1].mintempC .. "°",
+                        message = "Today's minimum temperature" .. weather_json.weather[1].mintempC .. "°",
                         timeout = 20,
                         icon = os.getenv('HOME') .. "/.config/awesome/widget/wttr-weather/sunny.png"
                     }

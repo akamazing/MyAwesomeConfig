@@ -17,7 +17,7 @@ local global_keys =
 		"s",
 		hotkeys_popup.show_help,
 		{
-			description = "عرض المساعدة",
+			description = "Show Help",
 			group = "AWESOMEWM"
 		}
 	),
@@ -28,8 +28,8 @@ local global_keys =
 			awful.spawn("systemsettings5")
 		end,
 		{
-			description = "الاعدادات",
-			group = "تطبيقات"
+			description = "Settings",
+			group = "applications"
 		}
 	),
 	awful.key(
@@ -37,7 +37,7 @@ local global_keys =
 		"Escape",
 		awful.tag.history.restore,
 		{
-			description = "التنقل بين اخر مكانين",
+			description = "Move between the last two windows",
 			group = "SCREEN OPERATIONS"
 		}
 	),
@@ -47,7 +47,7 @@ local global_keys =
 		function()
 			awful.client.focus.byidx(1)
 		end,
-		{description = "التركيز على السابق بالفهرس", group = "SCREEN OPERATIONS"}
+		{description = "Focus on the previous index", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -55,7 +55,7 @@ local global_keys =
 		function()
 			awful.client.focus.byidx(-1)
 		end,
-		{description = "التركيز على التالي بالفهرس", group = "SCREEN OPERATIONS"}
+		{description = "Focus on the next index", group = "SCREEN OPERATIONS"}
 	),
 	-- awful.key(
 	-- 	{modkey},
@@ -74,7 +74,15 @@ local global_keys =
 		function()
 			awful.spawn("spectacle", false)
 		end,
-		{description = "لقطة كاملة للشاشة", group = "ادوات"}
+		{description = "Full screenshot", group = "tools"}
+	),
+	awful.key(
+		{},
+		"F6",
+		function()
+			awful.spawn("spectacle", false)
+		end,
+		{description = "Full screenshot", group = "tools"}
 	),
 	awful.key(
 		{modkey},
@@ -82,7 +90,7 @@ local global_keys =
 		function()
 			awesome.emit_signal("widget::blue_light:toggle")
 		end,
-		{description = "تغيير وضع القراءة", group = "ادوات"}
+		{description = "تغيير وضع القراءة", group = "tools"}
 	),
 	awful.key(
 		{modkey},
@@ -90,7 +98,7 @@ local global_keys =
 		function()
 			awesome.spawn("xcolor -s", false)
 		end,
-		{description = "اخذ لون من الشاشة", group = "ادوات"}
+		{description = "اخذ لون من الشاشة", group = "tools"}
 	),
 	-----------------------------------------------------
 	-- ROFI MENUS
@@ -102,7 +110,7 @@ local global_keys =
 		function()
 			awful.util.spawn("rofi -show drun")
 		end,
-		{description = "فتح قائمة التطبيقات", group = "روفي"}
+		{description = "Application menu", group = "menu"}
 	),
 	awful.key(
 		{modkey},
@@ -116,7 +124,7 @@ local global_keys =
 				_G.central_panel_mode = "today_mode"
 			end
 		end,
-		{description = "قتح مركز الاشعارات", group = "SCREEN OPERATIONS"}
+		{description = "Notification center", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -124,7 +132,7 @@ local global_keys =
 		function()
 			awesome.emit_signal("widget::open_left_menu")
 		end,
-		{description = "قتح القائمة على اليسار", group = "SCREEN OPERATIONS"}
+		{description = "Open menu", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey},
@@ -146,7 +154,7 @@ local global_keys =
 			-- 	"rofi -show p -modi p:~/.config/rofi/rofi-power-menu -theme ~/.config/awesome/rofi-new-dracula/power-menu-theme-right"
 			-- )
 		end,
-		{description = "فتح قائمة الخروج", group = "روفي"}
+		{description = "Logout menu", group = "menu"}
 	),
 	-----------------------------------------------------
 	-- Layout manipulation
@@ -201,7 +209,7 @@ local global_keys =
 				client.focus:raise()
 			end
 		end,
-		{description = "Previous", group = "SCREEN OPERATIONS"}
+		{description = "Select previous window", group = "SCREEN OPERATIONS"}
 	),
 	awful.key(
 		{modkey, "Control"},
@@ -358,7 +366,7 @@ local global_keys =
 		function()
 			awful.spawn(apps.default.terminal)
 		end,
-		{description = "افتح الطرفية", group = "تطبيقات"}
+		{description = "افتح الطرفية", group = "applications"}
 	),
 	awful.key(
 		{modkey, "Shift"},
@@ -368,7 +376,7 @@ local global_keys =
 		end,
 		{
 			description = "افتح متصفح الملفات (دولفين)",
-			group = "تطبيقات"
+			group = "applications"
 		}
 	),
 	awful.key(
@@ -379,7 +387,7 @@ local global_keys =
 		end,
 		{
 			description = "افتح فايرفوكس",
-			group = "تطبيقات"
+			group = "applications"
 		}
 	),
 	awful.key(
@@ -390,7 +398,7 @@ local global_keys =
 		end,
 		{
 			description = "افتح اندرويد استوديو",
-			group = "تطبيقات"
+			group = "applications"
 		}
 	),
 	awful.key(
@@ -399,7 +407,7 @@ local global_keys =
 		function()
 			awful.spawn("charm")
 		end,
-		{description = "افتح PyCahrm", group = "تطبيقات"}
+		{description = "افتح PyCahrm", group = "applications"}
 	),
 	awful.key(
 		{modkey, "Shift"},
@@ -407,7 +415,7 @@ local global_keys =
 		function()
 			awful.spawn("telegram-desktop")
 		end,
-		{description = "افتح تلقرام", group = "تطبيقات"}
+		{description = "افتح تلقرام", group = "applications"}
 	),
 	awful.key(
 		{modkey},
@@ -415,7 +423,7 @@ local global_keys =
 		function()
 			awful.spawn(apps.default.multimedia)
 		end,
-		{description = "افتح مشغل الموسيقى", group = "تطبيقات"}
+		{description = "افتح مشغل الموسيقى", group = "applications"}
 	),
 	awful.key(
 		{modkey},
@@ -423,7 +431,7 @@ local global_keys =
 		function()
 			awful.spawn("easyeffects")
 		end,
-		{description = "افتح easyeffects", group = "تطبيقات"}
+		{description = "افتح easyeffects", group = "applications"}
 	),
 	awful.key(
 		{modkey, "Shift"},
@@ -431,7 +439,7 @@ local global_keys =
 		function()
 			awful.spawn(apps.default.text_editor)
 		end,
-		{description = "افتح VS Code", group = "تطبيقات"}
+		{description = "افتح VS Code", group = "applications"}
 	),
 	awful.key(
 		{modkey, "Shift"},
@@ -439,7 +447,7 @@ local global_keys =
 		function()
 			awful.spawn("plasma-systemmonitor", false)
 		end,
-		{description = "مدير المهام", group = "تطبيقات"}
+		{description = "مدير المهام", group = "applications"}
 	),
 	awful.key(
 		{altkey},
@@ -447,7 +455,7 @@ local global_keys =
 		function()
 			awful.spawn("rofi -show windowcd", false)
 		end,
-		{description = "اخر تطبيقات", group = "تطبيقات"}
+		{description = "اخر تطبيقات", group = "applications"}
 	)
 )
 

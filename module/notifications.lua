@@ -14,11 +14,11 @@ naughty.config.defaults.screen = awful.screen.focused()
 
 naughty.config.defaults.icon_size = dpi(32)
 naughty.config.defaults.timeout = 5
-naughty.config.defaults.title = "اشعارات النظام"
+naughty.config.defaults.title = "System notifications"
 naughty.config.defaults.margin = 50
 naughty.config.defaults.border_width = beautiful.osd_border_width
 naughty.config.defaults.border_color = beautiful.notification_border_focus
-naughty.config.defaults.position = "bottom_left"
+naughty.config.defaults.position = "bottom_right"
 naughty.config.defaults.shape = function(cr, w, h)
 	gears.shape.rounded_rect(cr, w, h, beautiful.groups_radius)
 end
@@ -91,10 +91,10 @@ naughty.connect_signal(
 	function(message, startup)
 		naughty.notification {
 			urgency = "critical",
-			title = "عذرا. حدث خطأ" .. (startup and " اثناء بدء التشغيل!" or "!"),
+			title = "Excuse me. an error occurred" .. (startup and "during startup!" or "!"),
 			font = beautiful.title_font,
 			message = message,
-			app_name = "اعدادات النظام",
+			app_name = "System settings",
 			icon = beautiful.awesome_icon
 		}
 	end

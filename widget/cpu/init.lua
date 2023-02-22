@@ -58,7 +58,7 @@ local function create_textbox(args)
         text = args.text,
         align = args.align or "left",
         markup = args.markup,
-        forced_width = args.forced_width or 40,
+        forced_width = args.forced_width or 50,
         widget = wibox.widget.textbox
     }
 end
@@ -76,7 +76,7 @@ local function create_process_header(params)
         },
         layout = wibox.layout.ratio.horizontal
     }
-    res:ajust_ratio(2, 0.2, 0.47, 0.33)
+    res:ajust_ratio(2, 0.35, 0.47, 0.30)
 
     return res
 end
@@ -128,7 +128,7 @@ local function worker(user_args)
 
     local hardware_header =
         wibox.widget {
-        text = "استخدام المعالج",
+        text = "CPU load",
         font = font,
         align = "center",
         valign = "center",
@@ -153,8 +153,8 @@ local function worker(user_args)
         shape = shape,
         border_width = border_width,
         border_color = border_color,
-        maximum_width = 300,
-        offset = {y = 10},
+        maximum_width = 375,
+        offset = {x = 150, y = 10},
         widget = {}
     }
 

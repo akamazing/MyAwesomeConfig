@@ -43,7 +43,7 @@ return {
 		"xfce4-power-manager",
 		"xfce4-screensaver &> x.log",
 		"balooctl enable",
-		'setxkbmap -layout "us" -option "grp:win_space_toggle"',
+		'setxkbmap -layout "us" -option "grp:win_space_toggle,ctrl:swapcaps,altwin:swap_alt_win"',
 		"/usr/lib/polkit-kde-authentication-agent-1",
 		-- "picom -b --experimental-backends  --dbus --config " .. config_dir .. "/configuration/picom.conf",
 		"picom --dbus --config " .. config_dir .. "/configuration/picom.conf",

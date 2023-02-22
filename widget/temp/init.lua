@@ -78,7 +78,7 @@ local function factory(args)
 
     local hardware_header =
         wibox.widget {
-        text = "حرارة الاجهزة",
+        text = "Temperature",
         font = font,
         align = "center",
         valign = "center",
@@ -88,64 +88,71 @@ local function factory(args)
     local slider_composite = create_slider()
     local composite =
         create_core {
-        text = "المركب",
+        text = "NVME",
         slider = slider_composite
     }
 
     local slider_sensor_1 = create_slider()
     local sensor_1 =
         create_core {
-        text = "الحساس 1",
+        text = "Sensor 1",
         slider = slider_sensor_1
     }
 
     local slider_sensor_2 = create_slider()
     local sensor_2 =
         create_core {
-        text = "الحساس 2",
+        text = "Sensor 2",
         slider = slider_sensor_2
     }
 
     local slider_0 = create_slider()
     local core_0 =
         create_core {
-        text = "النواة 1",
+        text = "Core 1",
         slider = slider_0
     }
 
     local slider_1 = create_slider()
     local core_1 =
         create_core {
-        text = "النواة 2",
+        text = "Core 2",
         slider = slider_1
     }
 
     local slider_2 = create_slider()
     local core_2 =
         create_core {
-        text = "النواة 3",
+        text = "Core 3",
         slider = slider_2
     }
 
     local slider_3 = create_slider()
     local core_3 =
         create_core {
-        text = "النواة 4",
+        text = "Core 4",
         slider = slider_3
     }
 
     local slider_4 = create_slider()
     local core_4 =
         create_core {
-        text = "النواة 5",
+        text = "Core 5",
         slider = slider_4
     }
 
     local slider_5 = create_slider()
     local core_5 =
         create_core {
-        text = "النواة 6",
+        text = "Core 6",
         slider = slider_5
+    }
+
+    local slider_6 = create_slider()
+    local core_6 =
+        create_core {
+        text = "Core 7",
+        slider = slider_6
     }
 
     local detailed_widget =
@@ -175,7 +182,8 @@ local function factory(args)
                     core_2,
                     core_3,
                     core_4,
-                    core_5
+                    core_5,
+                    -- core_6
                 },
                 bg = bg,
                 -- shape = shape,
@@ -217,8 +225,8 @@ local function factory(args)
                 elseif line:match("Composite") then
                     local degree = helpers.trim(string.match(line, "%d+"))
                     slider_composite.core:set_value(math.floor(degree))
-                elseif line:match("Sensor 1") then
-                    local degree = helpers.trim(string.match(string.gsub(line, "Sensor 1:", ""), "%d+"))
+                elseif line:match("edge") then
+                    local degree = helpers.trim(string.match(string.gsub(line, "edge:", ""), "%d+"))
                     slider_sensor_1.core:set_value(math.floor(degree))
                 elseif line:match("Sensor 2") then
                     local degree = helpers.trim(string.match(string.gsub(line, "Sensor 2:", ""), "%d+"))

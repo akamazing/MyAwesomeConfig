@@ -196,8 +196,8 @@ awful.screen.connect_for_each_screen(
             s.weather =
                 require("widget.wttr-weather") {
                 widget_bg = beautiful.weather_widget_bg_color or beautiful.weather_color,
-                widget_fg = beautiful.weather_widget_text_color or beautiful.weather_text_color
-                -- city = "Cairo",
+                widget_fg = beautiful.weather_widget_text_color or beautiful.weather_text_color,
+                city = "Omaha",
             }
 
             s.systray =
