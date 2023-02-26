@@ -166,22 +166,22 @@ awesome_menu = {
 
 local default_app_menu = {
 	{
-		'الطرفية',
+		'Terminal',
 		terminal,
 		menubar.utils.lookup_icon('utilities-terminal')
 	},
 	{
-		'المتصفح',
+		'Browser',
 		web_browser,
 		menubar.utils.lookup_icon('webbrowser-app')
 	},
 	{
-		'مدير الملفات',
+		'File manager',
 		file_manager,
 		menubar.utils.lookup_icon('system-file-manager')
 	},
 	{
-		'محرر النصوص',
+		'Text editor',
 		text_editor,
 		menubar.utils.lookup_icon('accessories-text-editor')
 	}
@@ -218,7 +218,7 @@ local default_app_menu = {
 
 local tools_menu = {
 	{
-		'اوسم',
+		'Awesome',
 		awesome_menu,
 		beautiful.awesome_icon
 	},

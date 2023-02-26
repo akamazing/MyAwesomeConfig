@@ -90,7 +90,7 @@ local return_button = function()
 			"upower -i $(upower -e | grep BAT)",
 			function(stdout)
 				if stdout == nil or stdout == "" then
-					battery_tooltip:set_text("لم يتم العثور على البطارية!")
+					battery_tooltip:set_text("Battery was not found!")
 					return
 				end
 

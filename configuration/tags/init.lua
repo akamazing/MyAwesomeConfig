@@ -141,7 +141,10 @@ tag.connect_signal(
 awful.tag.attached_connect_signal(
 	s,
 	"property::selected",
-	function()
+	function(t)
+		if t.selected then
+            beautiful.taglist_fg_focus = "#AD4CD3"
+        end
 		local urgent_clients = function(c)
 			return awful.rules.match(c, {urgent = true})
 		end

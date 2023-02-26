@@ -213,48 +213,48 @@ local function worker(args)
 			final:get_children_by_id("month_name")[1]:set_text(month_name)
 
 			if week_number == "1" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("واصل طريقك ")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("Move on")
 			elseif week_number == "2" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("نصف الاسبوع ⌚")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("Half way there ⌚")
 			elseif week_number == "3" then
 				-- final:get_children_by_id("line_margin")[1].left = dpi(50)
-				final:get_children_by_id("fuzzy_day")[1]:set_text("باقي يومين ")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("two days left  ")
 			elseif week_number == "4" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("ارررحب يالخميس 😉")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("Welcome Thursday😉  ")
 			elseif week_number == "5" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("عطلة 😍!")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("Vacation  😍!")
 			elseif week_number == "6" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("اسبوع جديد ")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("New week  ")
 			elseif week_number == "7" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("استمر ")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("I continue  ")
 			end
 
 			if tonumber(hours) >= 0 and tonumber(hours) < 4 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("النوم")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("sleep")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("😴")
 				fuzzy_time.forced_width = dpi(80 - fuzzy_time_offset)
 			elseif tonumber(hours) >= 4 and tonumber(hours) < 9 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("صباح الخير")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("Good morning")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("")
 				fuzzy_time.forced_width = dpi(130 - fuzzy_time_offset)
 			elseif tonumber(hours) >= 9 and tonumber(hours) < 12 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("الصبوح")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("Work work work")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("")
 				fuzzy_time.forced_width = dpi(95 - fuzzy_time_offset)
 			elseif tonumber(hours) >= 12 and tonumber(hours) < 15 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("الغداء")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("Lunch time")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("")
 				fuzzy_time.forced_width = dpi(85 - fuzzy_time_offset)
 			elseif tonumber(hours) >= 15 and tonumber(hours) < 18 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("شاي بعد الغداء")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("Snack time")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("")
 				fuzzy_time.forced_width = dpi(190 - fuzzy_time_offset)
 			elseif tonumber(hours) >= 18 and tonumber(hours) < 21 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("العشاء")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("Dinner")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("")
 				fuzzy_time.forced_width = dpi(95 - fuzzy_time_offset)
 			elseif tonumber(hours) >= 21 then
-				fuzzy_time:get_children_by_id("text_id")[1]:set_text("ليلة سعيدة")
+				fuzzy_time:get_children_by_id("text_id")[1]:set_text("Good night")
 				fuzzy_time:get_children_by_id("icon_id")[1]:set_text("")
 				fuzzy_time.forced_width = dpi(140 - fuzzy_time_offset)
 			end
@@ -262,7 +262,7 @@ local function worker(args)
 			if tonumber(hours) > 12 then
 				hours = tonumber(hours - 12)
 			end
-			final:get_children_by_id("time_now")[1]:set_text("الساعة الان " .. hours .. ":" .. minutes)
+			final:get_children_by_id("time_now")[1]:set_text("The time is: " .. hours .. ":" .. minutes)
 
 			-- final:get_children_by_id("day_number")[1]:set_text("30")
 

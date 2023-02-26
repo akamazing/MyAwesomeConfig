@@ -57,7 +57,7 @@ local central_panel = function(s)
 									widget = {
 										layout = wibox.layout.fixed.vertical,
 										helpers.set_widget_block {
-											widget = helpers.add_text("الطقس اليوم", nil, beautiful.uifont),
+											widget = helpers.add_text("Today's weather", nil, beautiful.uifont),
 											bg = beautiful.header_bg,
 											fg = beautiful.fg_normal,
 											top = dpi(15),
@@ -73,7 +73,7 @@ local central_panel = function(s)
 									widget = {
 										layout = wibox.layout.fixed.vertical,
 										helpers.set_widget_block {
-											widget = helpers.add_text("الموسقى", nil, beautiful.uifont),
+											widget = helpers.add_text("Music", nil, beautiful.uifont),
 											bg = beautiful.header_bg,
 											fg = beautiful.fg_normal,
 											top = dpi(15),

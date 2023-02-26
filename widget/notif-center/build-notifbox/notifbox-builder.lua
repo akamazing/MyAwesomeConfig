@@ -53,10 +53,10 @@ notifbox_box = function(notif, icon, title, message, app, bgcolor)
 			time_difference = tonumber(time_difference)
 
 			if time_difference < 60 then
-				notifbox_timepop:set_markup("الان")
+				notifbox_timepop:set_markup("now")
 			elseif time_difference >= 60 and time_difference < 3600 then
 				local time_in_minutes = math.floor(time_difference / 60)
-				notifbox_timepop:set_markup(time_in_minutes .. "د مضت ")
+				notifbox_timepop:set_markup(time_in_minutes .. "d ago")
 			elseif time_difference >= 3600 and time_difference < 86400 then
 				notifbox_timepop:set_markup(exact_time)
 			elseif time_difference >= 86400 then

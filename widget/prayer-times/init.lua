@@ -92,7 +92,7 @@ local function factory(args)
     --------------------
     local header =
         helpers.add_text_icon_widget {
-        text = "اوقات الصلوات",
+        text = "Prayer times",
         icon = "",
         text_font = text_font,
         icon_font = icon_font,
