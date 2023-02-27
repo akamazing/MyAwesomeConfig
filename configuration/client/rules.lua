@@ -170,6 +170,22 @@ ruled.client.connect_signal(
 			}
 		}
 
+		-- floating terminal
+		ruled.client.append_rule {
+			rule_any = {
+				class = {"Guake", "guake"}
+			},
+			properties = {
+				titlebars_enabled = false,
+				floating = true,
+				above = true,
+				skip_decoration = true,
+				ontop = true,
+				sticky = true,
+				placement = awful.placement.centered
+			}
+		}
+
 		-- Browsers
 		ruled.client.append_rule {
 			id = "internet",
@@ -258,6 +274,7 @@ ruled.client.connect_signal(
 					"Unity",
 					"UnityHub",
 					"jetbrains-studio",
+					"jetbrains-clion",
 					"DBeaver",
 					"Ettercap",
 					"scrcpy"
@@ -405,3 +422,14 @@ client.connect_signal(
 		end
 	end
 )
+
+-- client.connect_signal(
+-- 	"property::floating",
+-- 	function(c)
+-- 		if c.class == "guake" then
+-- 			c.ontop = true
+-- 			c.above = true
+-- 			c.
+-- 		end
+-- 	end
+-- )

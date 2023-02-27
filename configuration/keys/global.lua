@@ -369,6 +369,14 @@ local global_keys =
 		{description = "افتح الطرفية", group = "applications"}
 	),
 	awful.key(
+		{"Control"},
+		"Return",
+		function()
+			awful.spawn("konsole")
+		end,
+		{description = "افتح الطرفية", group = "applications"}
+	),	
+	awful.key(
 		{modkey, "Shift"},
 		"e",
 		function()

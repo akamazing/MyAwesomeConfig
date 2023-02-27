@@ -934,7 +934,7 @@ local function factory(args)
                         app_name = "Weather",
                         title = "<span font='" .. beautiful.title_font .. "' >Cold weather! 😓</span> ",
                         font = beautiful.title_font,
-                        message = "Today's minimum temperature" .. weather_json.weather[1].mintempC .. "°",
+                        message = "Today's minimum temperature " .. weather_json.weather[1].mintempC .. "°",
                         timeout = 20,
                         icon = os.getenv('HOME') .. "/.config/awesome/widget/wttr-weather/sunny.png"
                     }

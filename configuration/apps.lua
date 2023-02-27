@@ -7,7 +7,7 @@ return {
 	-- The default applications that we will use in keybindings and widgets
 	default = {
 		-- Default terminal emulator
-		terminal = "konsole " .. beautiful.konsole_profile,
+		terminal = "guake ",
 		-- Default web browser
 		web_browser = "firefox",
 		-- Default text editor
@@ -42,8 +42,8 @@ return {
 		-- "lxqt-powermanagement",
 		"xfce4-power-manager",
 		"xfce4-screensaver &> x.log",
+		"pasystray",
 		"balooctl enable",
-		'setxkbmap -layout "us" -option "grp:win_space_toggle,ctrl:swapcaps,altwin:swap_alt_win"',
 		"/usr/lib/polkit-kde-authentication-agent-1",
 		-- "picom -b --experimental-backends  --dbus --config " .. config_dir .. "/configuration/picom.conf",
 		"picom --dbus --config " .. config_dir .. "/configuration/picom.conf",
