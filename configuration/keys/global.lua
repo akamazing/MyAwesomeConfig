@@ -7,6 +7,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 
 local modkey = require("configuration.keys.mod").mod_key
 local altkey = require("configuration.keys.mod").alt_key
+local ctrlkey = require("configuration.keys.mod").ctrl_key
 local apps = require("configuration.apps")
 
 -- Key bindings
@@ -484,7 +485,7 @@ for i = 1, 9 do
 		global_keys,
 		-- View tag only.
 		awful.key(
-			{modkey},
+			{ctrlkey},
 			"#" .. i + 9,
 			function()
 				local focused = awful.screen.focused()
