@@ -119,7 +119,6 @@ local function factory(args)
             helpers.set_widget_block {
                 widget = {
                     layout = wibox.layout.fixed.vertical,
-                    -- الخيارات مثل وضع الطيرات
                     helpers.add_margin {
                         widget = helpers.set_widget_block {
                             widget = {

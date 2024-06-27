@@ -22,7 +22,7 @@ local helpers = require("helpers")
 
 local action_name =
 	helpers.add_text_icon_widget {
-	text = "bluetooth",
+	text = "Bluetooth",
 	icon = "",
 	ltr = true,
 	icon_font = beautiful.iconfont,
@@ -101,9 +101,9 @@ local power_on_cmd =
 	awesome-client "
 	naughty = require('naughty')
 	naughty.notification({
-		app_name = 'مدير البلوتوث',
-		title = 'اشعارات النظام',
-		message = 'تشغيل البلوتوث...',
+		app_name = 'Bluetooth Manager',
+		title = 'rfkill unblock bluetooth',
+		message = 'Bluetooth enabled...',
 		icon = ']] ..
 	widget_icon_dir ..
 		"loading" ..
@@ -126,9 +126,9 @@ local power_off_cmd =
 	awesome-client "
 	naughty = require('naughty')
 	naughty.notification({
-		app_name = 'مدير البلوتوث',
-		title = 'اشعارات النظام',
-		message = 'تم تعطيل البلوتوث.',
+		app_name = 'Bluetooth Manager',
+		title = 'bluetoothctl power off',
+		message = 'Bluetooth disabled...',
 		icon = ']] ..
 	widget_icon_dir .. "bluetooth-off" .. ".svg" .. [['
 	})
