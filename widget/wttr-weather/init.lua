@@ -560,13 +560,13 @@ local function factory(args)
 
             icon.markup = helpers.colorize_text(w_icon, beautiful.weather_icon_fg_color, icon_font)
 
-            number_text_widget.text = "(" .. weather_json.weather[1].avgtempC .. ") " .. weather_json.current_condition[1].temp_C .. "°C - ".. weatherDesc
+            number_text_widget.text = "(" .. weather_json.weather[1].avgtempF .. ") " .. weather_json.current_condition[1].temp_F .. "°C - ".. weatherDesc
 
             -------------------------------------
             -- Today Weather 4 defferent times --
             -------------------------------------
             local year, month, day = weather_json.weather[1].date:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
-            today_1:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.current_condition[1].temp_C)
+            today_1:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.current_condition[1].temp_F)
             today_1:get_children_by_id("sky_status_id")[1]:set_text(weather_json.current_condition[1].weatherDesc[1].value)
             today_1:get_children_by_id("weather_icon_id")[1]:set_text(w_icon)
             today_1:get_children_by_id("temperature_time_id")[1]:set_text(weather_json.current_condition[1].observation_time)
@@ -574,13 +574,13 @@ local function factory(args)
             today_1:get_children_by_id("sunrise_id")[1]:set_text(" " .. weather_json.weather[1].astronomy[1].sunrise .. " - " .. weather_json.weather[1].astronomy[1].sunset)
             today_1:get_children_by_id("temperature_date_id")[1]:set_text(" " .. os.date("%A", os.time {year = year, month = month, day = day}) .. " | " .. month .. "/" .. day)
             today_1:get_children_by_id("temperature_city_id")[1]:set_text(city)
-            today_1:get_children_by_id("h_l_temperature_id")[1]:set_text("°" .. weather_json.weather[1].maxtempC .. "/°" .. weather_json.weather[1].mintempC)
+            today_1:get_children_by_id("h_l_temperature_id")[1]:set_text(weather_json.weather[1].mintempF .. "° - " .. weather_json.weather[1].maxtempF .. "°") 
 
-            if tonumber(weather_json.weather[1].avgtempC) < 15 then
+            if tonumber(weather_json.weather[1].avgtempF) < 60 then
                 weather_widget:get_children_by_id("widget_id")[1].bg = beautiful.weather_cold_color or beautiful.volume_widget_whole_color or beautiful.transparent
-            elseif tonumber(weather_json.weather[1].avgtempC) >= 15 and tonumber(weather_json.weather[1].avgtempC) <= 25 then
+            elseif tonumber(weather_json.weather[1].avgtempF) >= 60 and tonumber(weather_json.weather[1].avgtempF) <= 77 then
                 weather_widget:get_children_by_id("widget_id")[1].bg = beautiful.weather_nice_color or beautiful.volume_widget_whole_color or beautiful.transparent
-            elseif tonumber(weather_json.weather[1].avgtempC) > 25 then
+            elseif tonumber(weather_json.weather[1].avgtempF) > 77 then
                 weather_widget:get_children_by_id("widget_id")[1].bg = beautiful.weather_hot_color or beautiful.volume_widget_whole_color or beautiful.transparent
             end
 
@@ -603,7 +603,7 @@ local function factory(args)
                     detailed_widget:get_children_by_id("widget_4")[1].visible = false
                 end
             )
-            today_2:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[4].tempC)
+            today_2:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[4].tempF)
             today_2:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[4].weatherDesc[1].value)
             today_2:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[1].hourly[4].weatherCode]
@@ -623,10 +623,10 @@ local function factory(args)
             )
             today_2:get_children_by_id("temperature_city_id")[1]:set_text(city)
             today_2:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[1].maxtempC .. "/°" .. weather_json.weather[1].mintempC
+                weather_json.weather[1].mintempF .. "° - " .. weather_json.weather[1].maxtempF .. "°"
             )
 
-            today_3:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[6].tempC)
+            today_3:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[6].tempF)
             today_3:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[6].weatherDesc[1].value)
             today_3:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[1].hourly[6].weatherCode]
@@ -646,10 +646,10 @@ local function factory(args)
             )
             today_3:get_children_by_id("temperature_city_id")[1]:set_text(city)
             today_3:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[1].maxtempC .. "/°" .. weather_json.weather[1].mintempC
+                weather_json.weather[1].mintempF .. "° - " .. weather_json.weather[1].maxtempF .. "°"
             )
 
-            today_4:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[8].tempC)
+            today_4:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[8].tempF)
             today_4:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[8].weatherDesc[1].value)
             today_4:get_children_by_id("weather_icon_id")[1]:set_text(
                 moon_icons[weather_json.weather[1].hourly[8].weatherCode]
@@ -669,14 +669,14 @@ local function factory(args)
             )
             today_4:get_children_by_id("temperature_city_id")[1]:set_text(city)
             today_4:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[1].maxtempC .. "/°" .. weather_json.weather[1].mintempC
+                weather_json.weather[1].mintempF .. "° - " .. weather_json.weather[1].maxtempF .. "°"
             )
 
             ----------------------------------------
             -- Tomorrow Weather 4 defferent times --
             ----------------------------------------
             local year, month, day = weather_json.weather[2].date:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
-            tomorrow_1:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[4].tempC)
+            tomorrow_1:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[4].tempF)
             tomorrow_1:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[2].hourly[4].weatherDesc[1].value
             )
@@ -698,7 +698,7 @@ local function factory(args)
             )
             tomorrow_1:get_children_by_id("temperature_city_id")[1]:set_text(city)
             tomorrow_1:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[2].maxtempC .. "/°" .. weather_json.weather[2].mintempC
+                weather_json.weather[2].mintempF .. "° - " .. weather_json.weather[2].maxtempF .. "°"
             )
 
             -- mouse::enter
@@ -721,7 +721,7 @@ local function factory(args)
                 end
             )
 
-            tomorrow_2:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[3].tempC)
+            tomorrow_2:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[3].tempF)
             tomorrow_2:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[2].hourly[3].weatherDesc[1].value
             )
@@ -743,10 +743,10 @@ local function factory(args)
             )
             tomorrow_2:get_children_by_id("temperature_city_id")[1]:set_text(city)
             tomorrow_2:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[2].maxtempC .. "/°" .. weather_json.weather[2].mintempC
+                weather_json.weather[2].mintempF .. "° - " .. weather_json.weather[2].maxtempF .. "°"
             )
 
-            tomorrow_3:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[6].tempC)
+            tomorrow_3:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[6].tempF)
             tomorrow_3:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[2].hourly[6].weatherDesc[1].value
             )
@@ -768,10 +768,10 @@ local function factory(args)
             )
             tomorrow_3:get_children_by_id("temperature_city_id")[1]:set_text(city)
             tomorrow_3:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[2].maxtempC .. "/°" .. weather_json.weather[2].mintempC
+                weather_json.weather[2].mintempF .. "° - " .. weather_json.weather[2].maxtempF .. "°"
             )
 
-            tomorrow_4:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[8].tempC)
+            tomorrow_4:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[8].tempF)
             tomorrow_4:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[2].hourly[8].weatherDesc[1].value
             )
@@ -793,7 +793,7 @@ local function factory(args)
             )
             tomorrow_4:get_children_by_id("temperature_city_id")[1]:set_text(city)
             tomorrow_4:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[2].maxtempC .. "/°" .. weather_json.weather[2].mintempC
+                weather_json.weather[2].mintempF .. "° - " .. weather_json.weather[2].maxtempF .. "°"
             )
 
             ----------------------------------------------
@@ -801,7 +801,7 @@ local function factory(args)
             ----------------------------------------------
             local year, month, day = weather_json.weather[3].date:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
             after_tomorrow_1:get_children_by_id("temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].hourly[4].tempC
+                "°" .. weather_json.weather[3].hourly[4].tempF
             )
             after_tomorrow_1:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[3].hourly[4].weatherDesc[1].value
@@ -824,7 +824,7 @@ local function factory(args)
             )
             after_tomorrow_1:get_children_by_id("temperature_city_id")[1]:set_text(city)
             after_tomorrow_1:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].maxtempC .. "/°" .. weather_json.weather[3].mintempC
+                weather_json.weather[3].mintempF .. "° - " .. weather_json.weather[3].maxtempF .. "°"
             )
 
             -- mouse::enter
@@ -848,7 +848,7 @@ local function factory(args)
             )
 
             after_tomorrow_2:get_children_by_id("temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].hourly[3].tempC
+                "°" .. weather_json.weather[3].hourly[3].tempF
             )
             after_tomorrow_2:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[3].hourly[3].weatherDesc[1].value
@@ -871,11 +871,11 @@ local function factory(args)
             )
             after_tomorrow_2:get_children_by_id("temperature_city_id")[1]:set_text(city)
             after_tomorrow_2:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].maxtempC .. "/°" .. weather_json.weather[3].mintempC
+                weather_json.weather[3].mintempF .. "° - " .. weather_json.weather[3].maxtempF .. "°"
             )
 
             after_tomorrow_3:get_children_by_id("temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].hourly[7].tempC
+                "°" .. weather_json.weather[3].hourly[7].tempF
             )
             after_tomorrow_3:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[3].hourly[6].weatherDesc[1].value
@@ -898,11 +898,11 @@ local function factory(args)
             )
             after_tomorrow_3:get_children_by_id("temperature_city_id")[1]:set_text(city)
             after_tomorrow_3:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].maxtempC .. "/°" .. weather_json.weather[3].mintempC
+                 weather_json.weather[3].mintempF .. "° - " .. weather_json.weather[3].maxtempF .. "°"
             )
 
             after_tomorrow_4:get_children_by_id("temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].hourly[8].tempC
+                "°" .. weather_json.weather[3].hourly[8].tempF
             )
             after_tomorrow_4:get_children_by_id("sky_status_id")[1]:set_text(
                 weather_json.weather[3].hourly[8].weatherDesc[1].value
@@ -925,16 +925,16 @@ local function factory(args)
             )
             after_tomorrow_4:get_children_by_id("temperature_city_id")[1]:set_text(city)
             after_tomorrow_4:get_children_by_id("h_l_temperature_id")[1]:set_text(
-                "°" .. weather_json.weather[3].maxtempC .. "/°" .. weather_json.weather[3].mintempC
+                weather_json.weather[3].mintempF .. "° - " .. weather_json.weather[3].maxtempF .. "°"
             )
 
-            if tonumber(weather_json.weather[1].mintempC) < 7 and not cold_weather_notified then
+            if tonumber(weather_json.weather[1].mintempF) < 7 and not cold_weather_notified then
                 naughty.notification(
                     {
                         app_name = "Weather",
                         title = "<span font='" .. beautiful.title_font .. "' >Cold weather! 😓</span> ",
                         font = beautiful.title_font,
-                        message = "Today's minimum temperature " .. weather_json.weather[1].mintempC .. "°",
+                        message = "Today's minimum temperature " .. weather_json.weather[1].mintempF .. "°",
                         timeout = 20,
                         icon = os.getenv('HOME') .. "/.config/awesome/widget/wttr-weather/sunny.png"
                     }

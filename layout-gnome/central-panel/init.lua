@@ -151,7 +151,7 @@ local central_panel = function(s)
 			w_icon = require("widget.wttr-weather.moon-icons")[code]
 		end
 
-		today:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.current_condition[1].temp_C)
+		today:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.current_condition[1].temp_F)
 
 		today:get_children_by_id("sky_status_id")[1]:set_text(weather_json.current_condition[1].weatherDesc[1].value)
 		today:get_children_by_id("weather_icon_id")[1]:set_text(w_icon)
