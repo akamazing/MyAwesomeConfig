@@ -115,10 +115,9 @@ local return_button = function()
 		naughty.notification(
 			{
 				icon = widget_icon_dir .. "battery-alert.svg",
-				app_name = "النظام",
-				title = "البطارية منخفظة جداً!",
-				message = "صديقي, بطارية جهازك اوشكت على الانتهاء. لا تنسى ان تحفظ عملك قبل ان ينظفئ الجهاز.",
-				-- message = 'Hey, I think we have a problem here. Save your work before reaching the oblivion.',
+				app_name = "System",
+				title = "The battery is very low!",
+				message = 'Hey, I think we have a problem here. Save your work before reaching the oblivion.',
 				urgency = "critical"
 			}
 		)
@@ -127,17 +126,17 @@ local return_button = function()
 	local health_battery_warning = function(battery_persentage)
 		if battery_persentage >= 80 then
 			icon = "battery-charging-80.svg"
-			title = "قم بازالة الشاحن"
+			title = "Remove the charger"
 		elseif battery_persentage <= 40 then
 			icon = "battery-discharging-30.svg"
-			title = "قم بتوصيل الشاحن"
+			title = "Connect the charger"
 		end
 		message = 
-			"نسبة شحت البطارية وصل الى (" .. battery_persentage .. "%) للحفاظ على بطارية تدوم لوقت اكثر يفضل اتبارع قاعدة 40 - 80.\nالقاعدة 40 80 هي محاولة الحفاظ على بطارية الجهاز بين 40% إلى 80٪ لتقليل دورات الشحن وإطالة عمر البطارية"
+			"The battery charge percentage reached (" .. battery_persentage .. "%)\nTo reduce charging cycles and extend battery life keep the battery percentage between 40-80%."
 		naughty.notification(
 			{
 				icon = widget_icon_dir .. icon,
-				app_name = "النظام",
+				app_name = "System",
 				title = title,
 				message = message,
 				urgency = "normal"

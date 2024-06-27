@@ -136,7 +136,7 @@ local central_panel = function(s)
 	local function update_weather(stdout)
 		local weather_json = json.parse(stdout)
 
-		local lang_ar = weather_json.current_condition[1].lang_ar[1].value
+		local weatherDesc = weather_json.current_condition[1].weatherDesc[1].value
 		local today_time = weather_json.current_condition[1].localObsDateTime
 		local code = weather_json.current_condition[1].weatherCode
 		local city = weather_json.nearest_area[1].areaName[1].value
@@ -153,7 +153,7 @@ local central_panel = function(s)
 
 		today:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.current_condition[1].temp_C)
 
-		today:get_children_by_id("sky_status_id")[1]:set_text(weather_json.current_condition[1].lang_ar[1].value)
+		today:get_children_by_id("sky_status_id")[1]:set_text(weather_json.current_condition[1].weatherDesc[1].value)
 		today:get_children_by_id("weather_icon_id")[1]:set_text(w_icon)
 		today:get_children_by_id("temperature_time_id")[1]:set_text(weather_json.current_condition[1].observation_time)
 		today:get_children_by_id("moonrise_id")[1]:set_text(

@@ -191,7 +191,6 @@ awful.screen.connect_for_each_screen(
         )
 
         -- Only on primary screen
-        -- على الشاشاة الرئيسية فقط
         if s == screen.primary then
             s.weather =
                 require("widget.wttr-weather") {

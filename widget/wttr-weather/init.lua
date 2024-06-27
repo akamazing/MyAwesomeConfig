@@ -529,7 +529,7 @@ local function factory(args)
     }
 
     watch(
-        "curl ar.wttr.in/'" .. city .. "?format=j1'",
+        "curl en.wttr.in/'" .. city .. "?format=j1'",
         -- "cat w.txt",
         3600,
         function(_, stdout)
@@ -542,7 +542,7 @@ local function factory(args)
             detailed_widget.visible = true
             awesome.emit_signal("widget::update_weather", stdout)
 
-            local lang_ar = weather_json.current_condition[1].lang_ar[1].value
+            local weatherDesc = weather_json.current_condition[1].weatherDesc[1].value
             local today_time = weather_json.current_condition[1].localObsDateTime
             local code = weather_json.current_condition[1].weatherCode
             local city = weather_json.nearest_area[1].areaName[1].value
@@ -560,14 +560,14 @@ local function factory(args)
 
             icon.markup = helpers.colorize_text(w_icon, beautiful.weather_icon_fg_color, icon_font)
 
-            number_text_widget.text = "(" .. weather_json.weather[1].avgtempC .. ") " .. weather_json.current_condition[1].temp_C .. "°C - ".. lang_ar
+            number_text_widget.text = "(" .. weather_json.weather[1].avgtempC .. ") " .. weather_json.current_condition[1].temp_C .. "°C - ".. weatherDesc
 
             -------------------------------------
             -- Today Weather 4 defferent times --
             -------------------------------------
             local year, month, day = weather_json.weather[1].date:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
             today_1:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.current_condition[1].temp_C)
-            today_1:get_children_by_id("sky_status_id")[1]:set_text(weather_json.current_condition[1].lang_ar[1].value)
+            today_1:get_children_by_id("sky_status_id")[1]:set_text(weather_json.current_condition[1].weatherDesc[1].value)
             today_1:get_children_by_id("weather_icon_id")[1]:set_text(w_icon)
             today_1:get_children_by_id("temperature_time_id")[1]:set_text(weather_json.current_condition[1].observation_time)
             today_1:get_children_by_id("moonrise_id")[1]:set_text(" " .. weather_json.weather[1].astronomy[1].moonrise .. " - " .. weather_json.weather[1].astronomy[1].moonset)
@@ -604,7 +604,7 @@ local function factory(args)
                 end
             )
             today_2:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[4].tempC)
-            today_2:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[4].lang_ar[1].value)
+            today_2:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[4].weatherDesc[1].value)
             today_2:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[1].hourly[4].weatherCode]
             )
@@ -627,7 +627,7 @@ local function factory(args)
             )
 
             today_3:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[6].tempC)
-            today_3:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[6].lang_ar[1].value)
+            today_3:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[6].weatherDesc[1].value)
             today_3:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[1].hourly[6].weatherCode]
             )
@@ -650,7 +650,7 @@ local function factory(args)
             )
 
             today_4:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[1].hourly[8].tempC)
-            today_4:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[8].lang_ar[1].value)
+            today_4:get_children_by_id("sky_status_id")[1]:set_text(weather_json.weather[1].hourly[8].weatherDesc[1].value)
             today_4:get_children_by_id("weather_icon_id")[1]:set_text(
                 moon_icons[weather_json.weather[1].hourly[8].weatherCode]
             )
@@ -678,7 +678,7 @@ local function factory(args)
             local year, month, day = weather_json.weather[2].date:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
             tomorrow_1:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[4].tempC)
             tomorrow_1:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[2].hourly[4].lang_ar[1].value
+                weather_json.weather[2].hourly[4].weatherDesc[1].value
             )
             tomorrow_1:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[2].hourly[4].weatherCode]
@@ -723,7 +723,7 @@ local function factory(args)
 
             tomorrow_2:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[3].tempC)
             tomorrow_2:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[2].hourly[3].lang_ar[1].value
+                weather_json.weather[2].hourly[3].weatherDesc[1].value
             )
             tomorrow_2:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[2].hourly[3].weatherCode]
@@ -748,7 +748,7 @@ local function factory(args)
 
             tomorrow_3:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[6].tempC)
             tomorrow_3:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[2].hourly[6].lang_ar[1].value
+                weather_json.weather[2].hourly[6].weatherDesc[1].value
             )
             tomorrow_3:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[2].hourly[6].weatherCode]
@@ -773,7 +773,7 @@ local function factory(args)
 
             tomorrow_4:get_children_by_id("temperature_id")[1]:set_text("°" .. weather_json.weather[2].hourly[8].tempC)
             tomorrow_4:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[2].hourly[8].lang_ar[1].value
+                weather_json.weather[2].hourly[8].weatherDesc[1].value
             )
             tomorrow_4:get_children_by_id("weather_icon_id")[1]:set_text(
                 moon_icons[weather_json.weather[2].hourly[8].weatherCode]
@@ -804,7 +804,7 @@ local function factory(args)
                 "°" .. weather_json.weather[3].hourly[4].tempC
             )
             after_tomorrow_1:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[3].hourly[4].lang_ar[1].value
+                weather_json.weather[3].hourly[4].weatherDesc[1].value
             )
             after_tomorrow_1:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[3].hourly[4].weatherCode]
@@ -851,7 +851,7 @@ local function factory(args)
                 "°" .. weather_json.weather[3].hourly[3].tempC
             )
             after_tomorrow_2:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[3].hourly[3].lang_ar[1].value
+                weather_json.weather[3].hourly[3].weatherDesc[1].value
             )
             after_tomorrow_2:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[3].hourly[3].weatherCode]
@@ -878,7 +878,7 @@ local function factory(args)
                 "°" .. weather_json.weather[3].hourly[7].tempC
             )
             after_tomorrow_3:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[3].hourly[6].lang_ar[1].value
+                weather_json.weather[3].hourly[6].weatherDesc[1].value
             )
             after_tomorrow_3:get_children_by_id("weather_icon_id")[1]:set_text(
                 sun_icons[weather_json.weather[3].hourly[6].weatherCode]
@@ -905,7 +905,7 @@ local function factory(args)
                 "°" .. weather_json.weather[3].hourly[8].tempC
             )
             after_tomorrow_4:get_children_by_id("sky_status_id")[1]:set_text(
-                weather_json.weather[3].hourly[8].lang_ar[1].value
+                weather_json.weather[3].hourly[8].weatherDesc[1].value
             )
             after_tomorrow_4:get_children_by_id("weather_icon_id")[1]:set_text(
                 moon_icons[weather_json.weather[3].hourly[8].weatherCode]
