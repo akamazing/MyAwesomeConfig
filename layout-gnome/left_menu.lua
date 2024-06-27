@@ -270,7 +270,7 @@ local function factory(args)
     wifi_settings:connect_signal(
         "button::press",
         function()
-            awful.spawn("systemsettings5 kcm_networkmanagement")
+            awful.spawn("nm-connection-editor")
             hide_popup()
         end
     )
@@ -278,7 +278,7 @@ local function factory(args)
     sound_settings:connect_signal(
         "button::press",
         function()
-            awful.spawn("systemsettings5 kcm_pulseaudio")
+            awful.spawn("pavucontrol")
             hide_popup()
         end
     )

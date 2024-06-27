@@ -75,7 +75,7 @@ local function worker(args)
 		{
 			layout = wibox.layout.fixed.horizontal,
 			---------------------------
-			-------- معلومات الساعة --------
+            -------- Watch information --------
 			---------------------------
 			helpers.set_widget_block {
 				widget = {
@@ -218,9 +218,9 @@ local function worker(args)
 				final:get_children_by_id("fuzzy_day")[1]:set_text("Half way there ⌚")
 			elseif week_number == "3" then
 				-- final:get_children_by_id("line_margin")[1].left = dpi(50)
-				final:get_children_by_id("fuzzy_day")[1]:set_text("two days left  ")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("two days left")
 			elseif week_number == "4" then
-				final:get_children_by_id("fuzzy_day")[1]:set_text("Welcome Thursday😉  ")
+				final:get_children_by_id("fuzzy_day")[1]:set_text("Welcome Thursday 😉")
 			elseif week_number == "5" then
 				final:get_children_by_id("fuzzy_day")[1]:set_text("Vacation  😍!")
 			elseif week_number == "6" then
